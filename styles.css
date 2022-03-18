@@ -1,5 +1,5 @@
 .blurred {
-  filter: blur(5px);
+  filter: blur(8px);
   cursor: not-allowed;
 }
 
