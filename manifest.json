@@ -1,0 +1,35 @@
+{
+  "name": "Boycott Nestle",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "description": "Nestle doesn't want to pull from Russia. If you are against the war this extension helps you boyctott their products.",
+  "content_scripts": [
+    {
+      "js": ["index.js"],
+      "css": ["styles.css"],
+      "matches": [
+        "https://www.tesco.ie/*",
+        "https://www.tesco.ie/*",
+        "https://www.tesco.com/*",
+        "https://www.tesco.com/*"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": ["scripting"],
+  "host_permissions": ["https://www.tesco.ie/", "https://www.tesco.com/"],
+  "action": {
+    "default_icon": {
+      "16": "nestle_16.png",
+      "32": "nestle_32.png",
+      "48": "nestle_48.png",
+      "128": "nestle_128.png"
+    }
+  },
+  "icons": {
+    "16": "nestle_16.png",
+    "32": "nestle_32.png",
+    "48": "nestle_48.png",
+    "128": "nestle_128.png"
+  }
+}
