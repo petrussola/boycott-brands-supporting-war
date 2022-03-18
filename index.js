@@ -28,10 +28,12 @@ function appendFooter(tileClasses) {
   flag.ariaRoleDescription = 'Ukranian Flag';
   flag.ariaLabel = 'Ukranian Flag';
   flag.role = 'img';
-  text.innerText =
-    ' By refusing to exit the Russian market, Nestlé is supporting the war in Ukraine. Buy something else.';
+  text.innerHTML =
+    'By refusing to exit the Russian market, Nestlé is supporting the war in Ukraine. Their products have been blurred. Please choose something else. <a href="https://google.com">Read more</a>';
+  close.innerText = 'Close';
   footer.appendChild(flag);
   footer.appendChild(text);
+  // footer.appendChild(close);
   footer.classList.add('ukraine-footer');
   const productTiles = document.querySelectorAll(...tileClasses);
   const productArray = Array.from(productTiles).some((tile) => checkBoycottedProduct(tile.innerText.toLowerCase()));
