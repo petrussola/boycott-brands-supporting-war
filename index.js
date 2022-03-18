@@ -1,140 +1,191 @@
-window.addEventListener("load", findProducts);
-
-const mainContent = document.querySelector(".main__content");
-
 var mutationObserver = new MutationObserver(function (mutations) {
   mutations.forEach(function () {
-    findProducts();
+    chooseHost();
   });
 });
 
-const slogan =
-  "By refusing to exit the Russian market, Nestlé is supporting the war in Ukraine. Buy something else.";
-
 mutationObserver.observe(document.documentElement, {
-  attributes: true,
+  attributes: false,
   characterData: true,
   childList: true,
   subtree: true,
-  attributeOldValue: true,
+  attributeOldValue: false,
   characterDataOldValue: true,
 });
 
 function checkBoycottedProduct(text) {
-  return boycottedProducts.some((product) =>
-    text.includes(product.toLowerCase())
-  );
+  return boycottedProducts.some((product) => text.includes(product.toLowerCase()));
 }
 
-function findProducts() {
-  const products = document.querySelectorAll(".product-tile-wrapper");
-  products.forEach((item) => {
+function appendFooter(tileClasses) {
+  const footer = document.createElement('div');
+  const flag = document.createElement('div');
+  const text = document.createElement('div');
+  const close = document.createElement('div');
+  flag.innerText = '🇺🇦';
+  flag.ariaRoleDescription = 'Ukranian Flag';
+  flag.ariaLabel = 'Ukranian Flag';
+  flag.role = 'img';
+  text.innerHTML =
+    'By refusing to exit the Russian market, Nestlé is supporting the war in Ukraine. Their products have been blurred. Please choose something else. <a href="https://github.com/petrussola/boycott-brands-supporting-war/blob/blur/README.md" target="_blank" rel="noopener noreferrer">Read more</a>';
+  close.classList.add('close-button');
+  close.innerText = 'Close';
+  close.addEventListener('click', hideFooter);
+  footer.appendChild(flag);
+  footer.appendChild(text);
+  footer.appendChild(close);
+  footer.classList.add('ukraine-footer');
+  const productTiles = document.querySelectorAll(...tileClasses);
+  const productArray = Array.from(productTiles).some((tile) => checkBoycottedProduct(tile.innerText.toLowerCase()));
+  if (productArray) {
+    document.body.appendChild(footer);
+  }
+}
+
+function hideFooter() {
+  const footer = document.querySelector('.ukraine-footer');
+  footer.style.display = 'none';
+}
+
+function findProducts2(tileClasses) {
+  const footerExists = document.querySelector('.ukraine-footer');
+  if (!footerExists) {
+    appendFooter(tileClasses);
+  }
+  const productTiles = document.querySelectorAll(...tileClasses);
+
+  productTiles.forEach((item) => {
     const productDescription = item.innerText.toLowerCase();
     if (checkBoycottedProduct(productDescription)) {
-      // adds border to the product tile
-      item.style.border = "4px solid red";
-
-      const banner = document.createElement("div");
-      banner.textContent = slogan;
-      banner.classList.add("banner");
-      const addProductControls = item.querySelector(
-        ".product-controls__wrapper"
-      );
-      addProductControls &&
-        addProductControls.parentNode.replaceChild(banner, addProductControls);
-
-      // hides any promotion for the product
-      const promo = document.querySelector(".promotions-wrapper");
-      const offer = document.querySelector(".special-offer-sash");
-      const sponsored = document.querySelector(
-        ".styled__FlashSashContent-sc-9znnul-0"
-      );
-      promo && promo.remove();
-      offer && offer.remove();
-      sponsored && sponsored.remove();
+      item.classList.add('blurred');
     }
   });
 }
 
-var boycottedProducts = [
-  "Nestle",
-  "Nestlé",
-  "Cerelac",
-  "Gerber",
-  "NaturNes",
-  "Pure Life",
-  "Perrier",
-  "Pellegrino",
-  "Cheerios",
-  "Fitness",
-  "Lion",
-  "Nesquik",
-  "Aero",
-  "Cailler",
-  "KitKat",
-  "Milkybar",
+const supermarket = window.location.hostname;
+function chooseHost() {
+  switch (supermarket) {
+    case 'www.tesco.com':
+      findProducts2(['.product-list--list-item', '.product-tile-wrapper']);
+      break;
+    case 'www.tesco.ie':
+      findProducts2(['.product-list--list-item', '.product-tile-wrapper']);
+      break;
+    case 'www.ocado.com':
+      findProducts2(['.fops-item']);
+      break;
+    case 'shop.supervalu.ie':
+      findProducts2(['.product-list-item']);
+      break;
+    case 'www.sainsburys.co.uk':
+      findProducts2(['.pt-grid-item']);
+      break;
+    case 'groceries.asda.com':
+      findProducts2(['.co-item']);
+      break;
+    case 'groceries.morrisons.com':
+      findProducts2(['.fop-item']);
+      break;
+    case 'www.iceland.co.uk':
+      findProducts2(['.product-tile']);
+      break;
+    case 'shop.jiffygrocery.co.uk':
+      findProducts2(['.product-item']);
+      break;
+    case 'groceries.aldi.co.uk':
+      findProducts2(['.product-tile']);
+      break;
+    case 'www.amazon.co.uk':
+      findProducts2(['.s-result-item']);
+      break;
+    // more difficult DOM observation
+    // case 'www.waitrose.com/':
+    //   findProducts2(['.pt-grid-item']);
+    //   break;
+    default:
+      return;
+  }
+}
+
+const boycottedProducts = [
+  'Nestle',
+  'Nestlé',
+  'Cerelac',
+  'Gerber',
+  'NaturNes',
+  'Pure Life',
+  'Perrier',
+  'Pellegrino',
+  'Cheerios',
+  'Fitness',
+  'Lion',
+  'Nesquik',
+  'Aero',
+  'Cailler',
+  'KitKat',
+  'Milkybar',
   "Les Recettes de l'Atelier",
-  "Orion",
-  "Quality Street",
-  "Smarties",
-  "Toll House",
-  "Blue Bottle Coffee",
-  "Nescafé Dolce Gusto",
-  "Nescafe Dolce Gusto",
-  "Nespresso",
-  "Starbucks",
-  "Buitoni",
-  "Herta",
-  "Hot Pockets",
-  "Lean Cuisine",
-  "Maggi",
-  "Stouffer",
-  "Thomy",
-  "Carnation",
-  "Coffee-Mate",
-  "La Laitière",
-  "La Laitiere",
-  "Nido",
-  "Milo",
-  "Nestea",
-  "Chef",
-  "Chef-Mate",
-  "Chef Mate",
-  "Maggi",
-  "Milo",
+  'Orion',
+  'Quality Street',
+  'Smarties',
+  'Toll House',
+  'Blue Bottle Coffee',
+  'Nescafé Dolce Gusto',
+  'Nescafe Dolce Gusto',
+  'Nespresso',
+  'Starbucks',
+  'Buitoni',
+  'Herta',
+  'Hot Pockets',
+  'Lean Cuisine',
+  'Maggi',
+  'Stouffer',
+  'Thomy',
+  'Carnation',
+  'Coffee-Mate',
+  'La Laitière',
+  'La Laitiere',
+  'Nido',
+  'Milo',
+  'Nestea',
+  'Chef',
+  'Chef-Mate',
+  'Chef Mate',
+  'Maggi',
+  'Milo',
   "Minor's",
-  "Nescafé",
-  "Nescafe",
-  "Nestea",
-  "Sjora",
-  "Lean Cuisine",
+  'Nescafé',
+  'Nescafe',
+  'Nestea',
+  'Sjora',
+  'Lean Cuisine',
   "Stouffer's",
-  "Stouffer",
-  "Boost",
-  "Nutren Junior",
-  "Peptamen",
-  "Resource",
+  'Stouffer',
+  'Boost',
+  'Nutren Junior',
+  'Peptamen',
+  'Resource',
   "Dreyer's",
-  "Dreyer",
-  "Extrême",
-  "Extreme",
-  "Häagen-Dazs",
-  "Haagen-Dazs",
-  "Haagen Dazs",
-  "Mövenpick",
-  "Movenpick",
-  "Nestlé Ice Cream",
-  "Nestle Ice Cream",
-  "Alpo",
-  "Bakers Complete",
-  "Beneful",
-  "Cat Chow",
-  "Dog Chow",
-  "Fancy Feast",
-  "Felix",
-  "Friskies",
-  "Gourmet",
-  "Purina",
-  "Purina ONE",
-  "Pro Plan",
+  'Dreyer',
+  'Extrême',
+  'Extreme',
+  'Häagen-Dazs',
+  'Haagen-Dazs',
+  'Haagen Dazs',
+  'Mövenpick',
+  'Movenpick',
+  'Nestlé Ice Cream',
+  'Nestle Ice Cream',
+  'Alpo',
+  'Bakers Complete',
+  'Beneful',
+  'Cat Chow',
+  'Dog Chow',
+  'Fancy Feast',
+  'Felix',
+  'Friskies',
+  'Gourmet',
+  'Purina',
+  'Purina ONE',
+  'Pro Plan',
 ];
