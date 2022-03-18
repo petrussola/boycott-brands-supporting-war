@@ -13,8 +13,6 @@ mutationObserver.observe(document.documentElement, {
   characterDataOldValue: true,
 });
 
-// const slogan = 'By refusing to exit the Russian market, Nestlé is supporting the war in Ukraine. Buy something else.';
-
 function checkBoycottedProduct(text) {
   return boycottedProducts.some((product) => text.includes(product.toLowerCase()));
 }
@@ -30,16 +28,23 @@ function appendFooter(tileClasses) {
   flag.role = 'img';
   text.innerHTML =
     'By refusing to exit the Russian market, Nestlé is supporting the war in Ukraine. Their products have been blurred. Please choose something else. <a href="https://google.com">Read more</a>';
+  close.classList.add('close-button');
   close.innerText = 'Close';
+  close.addEventListener('click', hideFooter);
   footer.appendChild(flag);
   footer.appendChild(text);
-  // footer.appendChild(close);
+  footer.appendChild(close);
   footer.classList.add('ukraine-footer');
   const productTiles = document.querySelectorAll(...tileClasses);
   const productArray = Array.from(productTiles).some((tile) => checkBoycottedProduct(tile.innerText.toLowerCase()));
   if (productArray) {
     document.body.appendChild(footer);
   }
+}
+
+function hideFooter() {
+  const footer = document.querySelector('.ukraine-footer');
+  footer.style.display = 'none';
 }
 
 function findProducts2(tileClasses) {
