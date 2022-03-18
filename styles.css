@@ -36,6 +36,8 @@
 }
 
 .close-button {
+  width: 20%;
+  font-size: 12px;
   transition: opacity 0.2s ease-in-out;
   cursor: pointer;
 }

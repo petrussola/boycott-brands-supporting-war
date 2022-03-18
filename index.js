@@ -27,7 +27,7 @@ function appendFooter(tileClasses) {
   flag.ariaLabel = 'Ukranian Flag';
   flag.role = 'img';
   text.innerHTML =
-    'By refusing to exit the Russian market, Nestlé is supporting the war in Ukraine. Their products have been blurred. Please choose something else. <a href="https://google.com">Read more</a>';
+    'By refusing to exit the Russian market, Nestlé is supporting the war in Ukraine. Their products have been blurred. Please choose something else. <a href="https://github.com/petrussola/boycott-brands-supporting-war/blob/blur/README.md" target="_blank" rel="noopener noreferrer">Read more</a>';
   close.classList.add('close-button');
   close.innerText = 'Close';
   close.addEventListener('click', hideFooter);
