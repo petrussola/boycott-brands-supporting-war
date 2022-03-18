@@ -1,6 +1,28 @@
-.banner {
-  color: red;
-  size: 1rem;
-  margin: auto auto 0 auto;
-  text-align: center;
+.blurred {
+  filter: blur(5px);
+  cursor: not-allowed;
+}
+
+.ukraine-footer {
+  max-width: 650px;
+  min-height: 40px;
+  background-color: white;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  transform: translate(-50%; -50%);
+  margin: 0 auto;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  z-index: 99;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  background-clip: padding-box;
+}
+
+.ukraine-footer > div {
+  padding: 0 1rem;
 }

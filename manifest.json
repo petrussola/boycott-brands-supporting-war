@@ -9,15 +9,36 @@
       "css": ["styles.css"],
       "matches": [
         "https://www.tesco.ie/*",
-        "https://www.tesco.ie/*",
         "https://www.tesco.com/*",
-        "https://www.tesco.com/*"
+        "https://www.ocado.com/*",
+        "https://shop.supervalu.ie/*",
+        "https://www.sainsburys.co.uk/*",
+        "https://groceries.asda.com/*",
+        "https://www.waitrose.com/*",
+        "https://groceries.morrisons.com/*",
+        "https://www.iceland.co.uk/*",
+        "https://shop.jiffygrocery.co.uk/*",
+        "https://groceries.aldi.co.uk/*",
+        "https://www.amazon.co.uk/*"
       ],
       "run_at": "document_end"
     }
   ],
   "permissions": ["scripting"],
-  "host_permissions": ["https://www.tesco.ie/", "https://www.tesco.com/"],
+  "host_permissions": [
+    "https://www.tesco.ie/",
+    "https://www.tesco.com/",
+    "https://www.ocado.com/",
+    "https://shop.supervalu.ie/",
+    "https://www.sainsburys.co.uk/",
+    "https://groceries.asda.com/",
+    "https://www.waitrose.com/",
+    "https://groceries.morrisons.com/",
+    "https://www.iceland.co.uk/",
+    "https://shop.jiffygrocery.co.uk/",
+    "https://groceries.aldi.co.uk/",
+    "https://www.amazon.co.uk/"
+  ],
   "action": {
     "default_icon": {
       "16": "nestle_16.png",
