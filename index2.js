@@ -110,7 +110,7 @@ function showFooter(listCompanies) {
   flag.role = "img";
   text.innerHTML = `By refusing to exit the Russian market, ${formattedListCompanies} ${
     listCompanies.length > 1 ? "are" : "is"
-  } supporting the war in Ukraine. Their products have been blurred. Please choose something else. <a href="https://github.com/petrussola/boycott-brands-supporting-war/blob/blur/README.md" target="_blank" rel="noopener noreferrer">Read more</a>`;
+  } supporting the war in Ukraine. Their products have been blurred. Please choose something else. <a href="https://github.com/petrussola/boycott-brands-supporting-war/blob/main/README.md" target="_blank" rel="noopener noreferrer">Read more</a>`;
   close.classList.add("close-button");
   close.innerText = "Close";
   close.addEventListener("click", hideFooter);
