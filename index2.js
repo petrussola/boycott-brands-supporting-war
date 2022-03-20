@@ -71,7 +71,8 @@ function applyBoycott(productTileClassName) {
     const tileText = tile.innerText.toLowerCase();
     const matchedBrand = isBrandFoundInText(tileText);
     if (matchedBrand) {
-      console.log(matchedBrand);
+      console.log(tileText);
+      console.log(matchedBrand, " < ", brandsOwnersMap[matchedBrand]);
       applyBlur(tile);
       addCompanyToBoycottedList(
         brandsOwnersMap[matchedBrand],
@@ -720,7 +721,6 @@ const brandsOwnersMap = {
   Pato: "SC Johnson",
   Ente: "SC Johnson",
   Drano: "SC Johnson",
-  Echo: "SC Johnson",
   Fantastik: "SC Johnson",
   "Freedom carpet foam": "SC Johnson",
   Klaro: "SC Johnson",
