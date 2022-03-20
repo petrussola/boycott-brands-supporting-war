@@ -25,6 +25,11 @@ function getClassNames() {
         mainContentClass: "main__content",
         productTileClass: "product-list--list-item",
       };
+    case "www.tesco.com":
+      return {
+        mainContentClass: "main__content",
+        productTileClass: "product-list--list-item",
+      };
     default:
       return {
         mainContentClass: "",
@@ -36,6 +41,11 @@ function getClassNames() {
 function observeDomChanges(productSectionClassName, productTileClassName) {
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
+      // TO BE REMOVED //
+      if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
+        console.log(mutation);
+      }
+      ///////////////////
       if (
         mutation.type === "childList" &&
         mutation.addedNodes.length > 0 &&
@@ -43,10 +53,10 @@ function observeDomChanges(productSectionClassName, productTileClassName) {
       ) {
         // highlight products
         const listBoycottedCompanies = applyBoycott(productTileClassName);
-        // add banner
-        if (listBoycottedCompanies.length > 0) {
-          showFooter(listBoycottedCompanies);
-        }
+        // action banner
+        listBoycottedCompanies.length > 0
+          ? showFooter(listBoycottedCompanies)
+          : hideFooter();
       }
     });
   });
@@ -122,8 +132,10 @@ function showFooter(listCompanies) {
 }
 
 function hideFooter() {
-  const footer = document.querySelector(".ukraine-footer");
-  footer.style.display = "none";
+  const footerCollection = document.getElementsByClassName("ukraine-footer");
+  Array.from(footerCollection).forEach((footer) => {
+    footer.remove();
+  });
 }
 
 const brandsOwnersMap = {
@@ -456,7 +468,6 @@ const brandsOwnersMap = {
   taft: "Henkel",
   tangit: "Henkel",
   technomelt: "Henkel",
-  tend: "Henkel",
   teraxyl: "Henkel",
   teroson: "Henkel",
   terra: "Henkel",
