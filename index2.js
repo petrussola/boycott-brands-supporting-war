@@ -35,7 +35,6 @@ function getClassNames() {
 
 function observeDomChanges(productSectionClassName, productTileClassName) {
   const observer = new MutationObserver((mutations) => {
-    console.log(mutations);
     mutations.forEach((mutation) => {
       if (
         mutation.type === "childList" &&
@@ -64,7 +63,10 @@ function applyBoycott(productTileClassName) {
     if (matchedBrand) {
       console.log(matchedBrand);
       applyBlur(tile);
-      addCompanyToBoycottedList(matchedBrand, boycottedCompanies);
+      addCompanyToBoycottedList(
+        brandsOwnersMap[matchedBrand],
+        boycottedCompanies
+      );
     }
   });
   return boycottedCompanies;
