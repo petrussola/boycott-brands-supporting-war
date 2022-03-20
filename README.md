@@ -4,9 +4,25 @@
 - This extension highlights products and brands owned by the brands in multiple online stores (see below). It blurs the offending items and shows a warning message so you can boycott them (see screenshots below).
 - By refusing to leave the Russian market, these brands are implicitely supporting the war in Ukraine.
 
-### Brands refusing to leave the Russian market
+### Brands refusing to leave the Russian market (see [#3, #4 and #5 in Yale's tracking document](https://som.yale.edu/story/2022/over-400-companies-have-withdrawn-russia-some-remain))
 
-- Nestlé: [source](https://twitter.com/Denys_Shmyhal/status/1504384528806297604)
+- Nestlé
+- Danone
+- Bacardi
+- Carlsberg
+- Pepsico
+- Bayer
+- Colgate-Palmolive
+- Henkel
+- Kellogg's
+- Kraft Heinz
+- Mars
+- Mondelēz International
+- Philip Morris
+- Procter & Gamble
+- Unilever
+- Barilla
+- SC Johnson
 
 ### Supermarkets currently targeted
 
@@ -30,7 +46,6 @@
 
 ### Todo
 
-- Add more brands
 - Add Waitrose
 - Add Mobile Styling
 - Considering adding persistence of banner hiding
