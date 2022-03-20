@@ -1,4 +1,4 @@
-const boycottedCompanies = [];
+// const boycottedCompanies = [];
 
 window.addEventListener("load", () => {
   console.log("window loaded");
@@ -35,6 +35,7 @@ function getClassNames() {
 
 function observeDomChanges(productSectionClassName, productTileClassName) {
   const observer = new MutationObserver((mutations) => {
+    console.log(mutations);
     mutations.forEach((mutation) => {
       if (
         mutation.type === "childList" &&
@@ -42,8 +43,11 @@ function observeDomChanges(productSectionClassName, productTileClassName) {
         mutation.target.className === productSectionClassName
       ) {
         // highlight products
-        applyBoycott(productTileClassName);
+        const listBoycottedCompanies = applyBoycott(productTileClassName);
         // add banner
+        if (listBoycottedCompanies.length > 0) {
+          showFooter(listBoycottedCompanies);
+        }
       }
     });
   });
@@ -52,6 +56,7 @@ function observeDomChanges(productSectionClassName, productTileClassName) {
 }
 
 function applyBoycott(productTileClassName) {
+  const boycottedCompanies = [];
   const productTiles = document.getElementsByClassName(productTileClassName);
   Array.from(productTiles).forEach((tile) => {
     const tileText = tile.innerText.toLowerCase();
@@ -59,11 +64,10 @@ function applyBoycott(productTileClassName) {
     if (matchedBrand) {
       console.log(matchedBrand);
       applyBlur(tile);
-      addCompanyToBoycottedList(matchedBrand);
-      return;
+      addCompanyToBoycottedList(matchedBrand, boycottedCompanies);
     }
-    return;
   });
+  return boycottedCompanies;
 }
 
 function isBrandFoundInText(text) {
@@ -78,9 +82,46 @@ function applyBlur(node) {
   node.classList.add("blurred");
 }
 
-function addCompanyToBoycottedList(companyName) {
-  boycottedCompanies.push(companyName);
+function addCompanyToBoycottedList(name, list) {
+  if (list.indexOf(name) === -1) {
+    list.push(name);
+  }
   return;
+}
+
+function showFooter(listCompanies) {
+  const formattedListCompanies =
+    listCompanies.length > 1
+      ? listCompanies
+          .slice(0, -1)
+          .join(", ")
+          .concat(" and ", listCompanies.slice(-1))
+      : listCompanies[0];
+
+  const footer = document.createElement("div");
+  const flag = document.createElement("div");
+  const text = document.createElement("div");
+  const close = document.createElement("div");
+  flag.innerText = "🇺🇦";
+  flag.ariaRoleDescription = "Ukrainian Flag";
+  flag.ariaLabel = "Ukrainian Flag";
+  flag.role = "img";
+  text.innerHTML = `By refusing to exit the Russian market, ${formattedListCompanies} ${
+    listCompanies.length > 1 ? "are" : "is"
+  } supporting the war in Ukraine. Their products have been blurred. Please choose something else. <a href="https://github.com/petrussola/boycott-brands-supporting-war/blob/blur/README.md" target="_blank" rel="noopener noreferrer">Read more</a>`;
+  close.classList.add("close-button");
+  close.innerText = "Close";
+  close.addEventListener("click", hideFooter);
+  footer.appendChild(flag);
+  footer.appendChild(text);
+  footer.appendChild(close);
+  footer.classList.add("ukraine-footer");
+  document.body.appendChild(footer);
+}
+
+function hideFooter() {
+  const footer = document.querySelector(".ukraine-footer");
+  footer.style.display = "none";
 }
 
 const brandsOwnersMap = {
