@@ -5,7 +5,7 @@
   "description": "Nestle doesn't want to pull from Russia. If you are against the war this extension helps you boyctott their products.",
   "content_scripts": [
     {
-      "js": ["index.js"],
+      "js": ["index2.js"],
       "css": ["styles.css"],
       "matches": [
         "https://www.tesco.ie/*",
