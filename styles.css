@@ -11,7 +11,7 @@
   left: 0;
   right: 0;
   bottom: 20px;
-  transform: translate(-50%; -50%);
+  transform: translate(-50% -50%);
   margin: 0 auto;
   border-radius: 10px;
   display: flex;
@@ -22,8 +22,8 @@
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
   background-clip: padding-box;
   font-size: 14px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .ukraine-footer > div {
