@@ -89,10 +89,10 @@ function findProducts2(tileClasses) {
 const supermarket = window.location.hostname;
 function chooseHost() {
   switch (supermarket) {
-    case "www.tesco.com":
+    case "www.tesco.com": // DONE
       findProducts2([".product-list--list-item", ".product-tile-wrapper"]);
       break;
-    case "www.tesco.ie":
+    case "www.tesco.ie": // DONE
       findProducts2([".product-list--list-item", ".product-tile-wrapper"]);
       break;
     case "www.ocado.com":
@@ -101,25 +101,25 @@ function chooseHost() {
     case "shop.supervalu.ie":
       findProducts2([".product-list-item"]);
       break;
-    case "www.sainsburys.co.uk":
+    case "www.sainsburys.co.uk": // DONE
       findProducts2([".pt-grid-item"]);
       break;
-    case "groceries.asda.com":
+    case "groceries.asda.com": // DONE
       findProducts2([".co-item"]);
       break;
-    case "groceries.morrisons.com":
+    case "groceries.morrisons.com": // DONE
       findProducts2([".fop-item"]);
       break;
-    case "www.iceland.co.uk":
+    case "www.iceland.co.uk": // ONLOAD on every search..
       findProducts2([".product-tile"]);
       break;
-    case "shop.jiffygrocery.co.uk":
+    case "shop.jiffygrocery.co.uk": // DONE
       findProducts2([".product-item"]);
       break;
-    case "groceries.aldi.co.uk":
+    case "groceries.aldi.co.uk": // ONLOAD on every search..
       findProducts2([".product-tile"]);
       break;
-    case "www.amazon.co.uk":
+    case "www.amazon.co.uk": // DONE
       findProducts2([".s-result-item"]);
       break;
     // more difficult DOM observation

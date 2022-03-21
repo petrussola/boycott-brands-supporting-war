@@ -1,13 +1,14 @@
 // const boycottedCompanies = [];
 
 window.addEventListener("load", () => {
+  alert("window loaded");
   console.log("window loaded");
   // get the class names
-  const { mainContentClass, productTileClass } = getClassNames();
+  const { mainContentClass, productTileClass, tileProp } = getClassNames();
   // highlight products in case user refreshes page
 
   // observe the content tag - add children
-  observeDomChanges(mainContentClass, productTileClass);
+  observeDomChanges(mainContentClass, productTileClass, tileProp);
   // when there is change, blur the products
 
   // add the banner
@@ -24,11 +25,67 @@ function getClassNames() {
       return {
         mainContentClass: "main__content",
         productTileClass: "product-list--list-item",
+        tileProp: "textContent",
       };
     case "www.tesco.com":
       return {
         mainContentClass: "main__content",
         productTileClass: "product-list--list-item",
+        tileProp: "textContent",
+      };
+    // TBD
+    case "shop.supervalu.ie":
+      return {
+        mainContentClass: "search-all-aisles-view",
+        productTileClass: "product-list-item",
+        tileProp: "textContent",
+      };
+    /////
+    case "www.sainsburys.co.uk": // what is being rbanded as mondelez when searching for orange?
+      return {
+        mainContentClass: "SRF__tileList",
+        productTileClass: "pt-grid-item",
+        tileProp: "textContent",
+      };
+    case "groceries.asda.com":
+      return {
+        mainContentClass: "search-page-content__products-tab-content",
+        productTileClass: "co-item",
+        tileProp: "textContent",
+      };
+    case "groceries.morrisons.com":
+      return {
+        mainContentClass: "main-column",
+        productTileClass: "fop-item",
+        tileProp: "textContent",
+      };
+    // case "www.iceland.co.uk":
+    //   return {
+    //     mainContentClass: "primary-content",
+    //     productTileClass: "product-tile",
+    //   };
+    case "shop.jiffygrocery.co.uk":
+      return {
+        mainContentClass: "w-100p w-min-320",
+        productTileClass: "product-item",
+        tileProp: "textContent",
+      };
+    // case "groceries.aldi.co.uk":
+    //   return {
+    //     mainContentClass: "w-100p w-min-320",
+    //     productTileClass: "product-tile",
+    //   };
+    case "www.amazon.co.uk":
+      return {
+        mainContentClass: "a-aui_72554-c",
+        productTileClass: "s-result-item",
+        tileProp: "innerText",
+      };
+    case "www.compraonline.bonpreuesclat.cat":
+      return {
+        mainContentClass: "layout__Container-sc-1cgl98j-0",
+        productTileClass: "box__Box-sc-4y5e6z-0",
+        tileProp: "textContent",
       };
     default:
       return {
@@ -38,21 +95,37 @@ function getClassNames() {
   }
 }
 
-function observeDomChanges(productSectionClassName, productTileClassName) {
+function findContentTag(contentTarget) {
+  if (contentTarget === "body") {
+    return (mutation) => mutation.target === contentTarget;
+  } else {
+    return (mutation) => mutation.target.className.includes(contentTarget);
+  }
+}
+
+function observeDomChanges(contentClassName, productTileClassName, tileProp) {
+  const targetFinder = findContentTag(contentClassName);
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
       // TO BE REMOVED //
       if (mutation.type === "childList" && mutation.addedNodes.length > 0) {
-        console.log(mutation);
+        // console.log(mutation);
       }
       ///////////////////
       if (
         mutation.type === "childList" &&
         mutation.addedNodes.length > 0 &&
-        mutation.target.className === productSectionClassName
+        targetFinder(mutation) &&
+        (!mutation.previousSibling ||
+          mutation.previousSibling.className !== "ukraine-footer")
+        // && mutation.target.className === contentClassName
       ) {
+        console.log(mutation);
         // highlight products
-        const listBoycottedCompanies = applyBoycott(productTileClassName);
+        const listBoycottedCompanies = applyBoycott(
+          productTileClassName,
+          tileProp
+        );
         // action banner
         listBoycottedCompanies.length > 0
           ? showFooter(listBoycottedCompanies)
@@ -64,11 +137,11 @@ function observeDomChanges(productSectionClassName, productTileClassName) {
   observer.observe(document.body, { subtree: true, childList: true });
 }
 
-function applyBoycott(productTileClassName) {
+function applyBoycott(productTileClassName, tileProp) {
   const boycottedCompanies = [];
   const productTiles = document.getElementsByClassName(productTileClassName);
   Array.from(productTiles).forEach((tile) => {
-    const tileText = tile.innerText.toLowerCase();
+    const tileText = tile[tileProp].toLowerCase();
     const matchedBrand = isBrandFoundInText(tileText);
     if (matchedBrand) {
       console.log(tileText);

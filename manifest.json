@@ -18,7 +18,8 @@
         "https://www.iceland.co.uk/*",
         "https://shop.jiffygrocery.co.uk/*",
         "https://groceries.aldi.co.uk/*",
-        "https://www.amazon.co.uk/*"
+        "https://www.amazon.co.uk/*",
+        "https://www.compraonline.bonpreuesclat.cat/*"
       ],
       "run_at": "document_end"
     }
@@ -35,7 +36,8 @@
     "https://www.iceland.co.uk/",
     "https://shop.jiffygrocery.co.uk/",
     "https://groceries.aldi.co.uk/",
-    "https://www.amazon.co.uk/"
+    "https://www.amazon.co.uk/",
+    "https://www.compraonline.bonpreuesclat.cat/"
   ],
   "action": {
     "default_icon": {
