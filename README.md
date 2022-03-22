@@ -1,6 +1,6 @@
 ## Chrome extension - Boycott western brands that have refused to exit Russian market
 
-- Currently in MVP stage - targeting only Nestlé. 
+- Currently in MVP stage - targeting only Nestlé.
 - This extension highlights products and brands owned by the brands in multiple online stores (see below). It blurs the offending items and shows a warning message so you can boycott them (see screenshots below).
 - By refusing to leave the Russian market, these brands are implicitely supporting the war in Ukraine.
 
@@ -26,16 +26,33 @@
 
 ### Supermarkets currently targeted
 
-- Tesco (.com, .ie)
+## Ireland
+
+- Tesco
+- Dunnes
+- Super Valu
+- Fresh
+
+## UK
+
+- Tesco
 - Ocado
 - Sainsburys
-- Morrisons
-- Supervalu
-- Iceland
-- Aldi
 - Asda
-- Amazon
+- Morrisons
+- Iceland
 - Jiffy
+- Aldi
+- Amazon
+- Waitrose
+
+## Spain
+
+- Dia
+- Alcampo
+- Carrefour
+- Esclat
+- Eroski
 
 ### Screenshots
 
@@ -43,10 +60,8 @@
 
 ![Screenshot 2022-03-18 at 23 07 34](https://user-images.githubusercontent.com/49898713/159095700-ff74b706-5d46-4e26-9880-00d6fcc7f711.png)
 
-
 ### Todo
 
-- Add Waitrose
 - Add Mobile Styling
 - Considering adding persistence of banner hiding
 - Create static page to 'read more' with charity links/information

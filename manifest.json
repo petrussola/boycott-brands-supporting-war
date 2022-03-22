@@ -1,11 +1,11 @@
 {
-  "name": "Boycott Nestle",
-  "version": "0.0.1",
+  "name": "Boycott brands refusing to exit Russia",
+  "version": "0.0.2",
   "manifest_version": 3,
-  "description": "Nestle doesn't want to pull from Russia. If you are against the war this extension helps you boyctott their products.",
+  "description": "By refusing to exit the Russian market some western brands are implicitely supporting the war in Ukraine. We can find these brands in our supermarket shelves and we can choose to boycott their products. This Chrome extension highlights these products when buying your groceries online, so it's easy for you to act. ",
   "content_scripts": [
     {
-      "js": ["index2.js"],
+      "js": ["index.js"],
       "css": ["styles.css"],
       "matches": [
         "https://www.tesco.ie/*",
@@ -19,7 +19,14 @@
         "https://shop.jiffygrocery.co.uk/*",
         "https://groceries.aldi.co.uk/*",
         "https://www.amazon.co.uk/*",
-        "https://www.compraonline.bonpreuesclat.cat/*"
+        "https://www.compraonline.bonpreuesclat.cat/*",
+        "https://www.dia.es/*",
+        "https://www.alcampo.es/*",
+        "https://www.carrefour.es/*",
+        "https://www.dunnesstoresgrocery.com/*",
+        "https://freshonline.ie/*",
+        "https://supermercado.eroski.es/*",
+        "https://www.waitrose.com/*"
       ],
       "run_at": "document_end"
     }
@@ -37,7 +44,14 @@
     "https://shop.jiffygrocery.co.uk/",
     "https://groceries.aldi.co.uk/",
     "https://www.amazon.co.uk/",
-    "https://www.compraonline.bonpreuesclat.cat/"
+    "https://www.compraonline.bonpreuesclat.cat/",
+    "https://www.dia.es/",
+    "https://www.alcampo.es/",
+    "https://www.carrefour.es/",
+    "https://www.dunnesstoresgrocery/",
+    "https://freshonline.ie/",
+    "https://supermercado.eroski.es/",
+    "https://www.waitrose.com/"
   ],
   "action": {
     "default_icon": {

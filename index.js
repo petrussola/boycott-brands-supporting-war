@@ -1,44 +1,216 @@
-var mutationObserver = new MutationObserver(function (mutations) {
-  mutations.forEach(function () {
-    chooseHost();
-  });
+window.addEventListener("load", () => {
+  // get the class names
+  const { mainContentClass, productTileClass, tileProp } = getClassNames();
+  // observe the content tag - add children
+  observeDomChanges(mainContentClass, productTileClass, tileProp);
 });
 
-mutationObserver.observe(document.documentElement, {
-  attributes: false,
-  characterData: true,
-  childList: true,
-  subtree: true,
-  attributeOldValue: false,
-  characterDataOldValue: true,
-});
-
-let boycottedCompanies = [];
-
-function checkBoycottedProduct(productName) {
-  const brands = Object.keys(brandsAndOwner);
-  const isBoycottedBrandFound = brands.some((brand) => {
-    const productNameMatchBrand = productName.includes(brand.toLowerCase());
-    if (
-      productNameMatchBrand &&
-      !boycottedCompanies.includes(brandsAndOwner[brand])
-    ) {
-      boycottedCompanies.push(brandsAndOwner[brand]);
-    }
-    return productNameMatchBrand;
-  });
-  return isBoycottedBrandFound;
+function getClassNames() {
+  const supermarket = window.location.hostname;
+  switch (supermarket) {
+    case "www.tesco.ie":
+      return {
+        mainContentClass: "main__content",
+        productTileClass: "product-list--list-item",
+        tileProp: "textContent",
+      };
+    case "www.tesco.com":
+      return {
+        mainContentClass: "main__content",
+        productTileClass: "product-list--list-item",
+        tileProp: "textContent",
+      };
+    case "www.ocado.com":
+      return {
+        mainContentClass: "app-page",
+        productTileClass: "fops-item",
+        tileProp: "textContent",
+      };
+    case "shop.supervalu.ie":
+      return {
+        mainContentClass: "body",
+        productTileClass: "product-list-item",
+        tileProp: "textContent",
+      };
+    case "www.sainsburys.co.uk":
+      return {
+        mainContentClass: "SRF__tileList",
+        productTileClass: "pt-grid-item",
+        tileProp: "textContent",
+      };
+    case "groceries.asda.com":
+      return {
+        mainContentClass: "search-page-content__products-tab-content",
+        productTileClass: "co-item",
+        tileProp: "textContent",
+      };
+    case "groceries.morrisons.com":
+      return {
+        mainContentClass: "main-column",
+        productTileClass: "fop-item",
+        tileProp: "textContent",
+      };
+    case "www.iceland.co.uk":
+      return {
+        mainContentClass: "body",
+        productTileClass: "product-tile",
+        tileProp: "textContent",
+      };
+    case "shop.jiffygrocery.co.uk":
+      return {
+        mainContentClass: "w-100p w-min-320",
+        productTileClass: "product-item",
+        tileProp: "textContent",
+      };
+    case "groceries.aldi.co.uk":
+      return {
+        mainContentClass: "body",
+        productTileClass: "product-tile",
+        tileProp: "textContent",
+      };
+    case "www.amazon.co.uk":
+      return {
+        mainContentClass: "a-aui_72554-c",
+        productTileClass: "s-result-item",
+        tileProp: "innerText",
+      };
+    case "www.compraonline.bonpreuesclat.cat":
+      return {
+        mainContentClass: "layout__Container-sc-1cgl98j-0",
+        productTileClass: "box__Box-sc-4y5e6z-0",
+        tileProp: "textContent",
+      };
+    case "www.dia.es":
+      return {
+        mainContentClass: "pageType-ContentPage",
+        productTileClass: "product-list__item",
+        tileProp: "textContent",
+      };
+    case "www.alcampo.es":
+      return {
+        mainContentClass: "body",
+        productTileClass: " productGridItemContainer ",
+        tileProp: "innerText",
+      };
+    case "www.carrefour.es":
+      return {
+        mainContentClass: "ebx-result-figure",
+        productTileClass: "ebx-result",
+        tileProp: "textContent",
+      };
+    case "www.dunnesstoresgrocery.com":
+      return {
+        mainContentClass: "body",
+        productTileClass: "ColListing-sc-lcurnl",
+        tileProp: "textContent",
+      };
+    case "freshonline.ie":
+      return {
+        mainContentClass: "warehouse--v1",
+        productTileClass: "product-item",
+        tileProp: "innerText",
+      };
+    case "supermercado.eroski.es":
+      return {
+        mainContentClass: "inbenta--eroski",
+        productTileClass: "product-item-lineal",
+        tileProp: "innerText",
+      };
+    case "www.waitrose.com":
+      return {
+        mainContentClass: "body",
+        productTileClass: "productPod___yz0mm",
+        tileProp: "textContent",
+      };
+    default:
+      return {
+        mainContentClass: "",
+        productTileClass: "",
+        tileProp: "",
+      };
+  }
 }
 
-function appendFooter(tileClasses) {
-  // build formatted string with list of boycotted companies
-  const boycottedCompaniesText =
-    boycottedCompanies.length > 1
-      ? boycottedCompanies
+function findContentTag(contentTarget) {
+  if (contentTarget === "body") {
+    return (mutation) => mutation.target.localName === contentTarget;
+  } else {
+    return (mutation) => mutation.target.className.includes(contentTarget);
+  }
+}
+
+function observeDomChanges(contentClassName, productTileClassName, tileProp) {
+  const targetFinder = findContentTag(contentClassName);
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (
+        mutation.type === "childList" &&
+        mutation.addedNodes.length > 0 &&
+        targetFinder(mutation) &&
+        (!mutation.previousSibling ||
+          mutation.previousSibling.className !== "ukraine-footer")
+      ) {
+        // highlight products
+        const listBoycottedCompanies = applyBoycott(
+          productTileClassName,
+          tileProp
+        );
+        // action banner
+        listBoycottedCompanies.length > 0
+          ? showFooter(listBoycottedCompanies)
+          : hideFooter();
+      }
+    });
+  });
+
+  observer.observe(document.body, { subtree: true, childList: true });
+}
+
+function applyBoycott(productTileClassName, tileProp) {
+  const boycottedCompanies = [];
+  const productTiles = document.getElementsByClassName(productTileClassName);
+  Array.from(productTiles).forEach((tile) => {
+    const tileText = tile[tileProp].toLowerCase();
+    const matchedBrand = isBrandFoundInText(tileText);
+    if (matchedBrand) {
+      applyBlur(tile);
+      addCompanyToBoycottedList(
+        brandsOwnersMap[matchedBrand],
+        boycottedCompanies
+      );
+    }
+  });
+  return boycottedCompanies;
+}
+
+function isBrandFoundInText(text) {
+  const brands = Object.keys(brandsOwnersMap);
+  const matchedBrand = brands.find((brand) =>
+    text.includes(brand.toLowerCase())
+  );
+  return matchedBrand;
+}
+
+function applyBlur(node) {
+  node.classList.add("blurred");
+}
+
+function addCompanyToBoycottedList(name, list) {
+  if (list.indexOf(name) === -1) {
+    list.push(name);
+  }
+  return;
+}
+
+function showFooter(listCompanies) {
+  const formattedListCompanies =
+    listCompanies.length > 1
+      ? listCompanies
           .slice(0, -1)
           .join(", ")
-          .concat(" and ", boycottedCompanies.slice(-1))
-      : boycottedCompanies[0];
+          .concat(" and ", listCompanies.slice(-1))
+      : listCompanies[0];
+
   const footer = document.createElement("div");
   const flag = document.createElement("div");
   const text = document.createElement("div");
@@ -47,9 +219,9 @@ function appendFooter(tileClasses) {
   flag.ariaRoleDescription = "Ukrainian Flag";
   flag.ariaLabel = "Ukrainian Flag";
   flag.role = "img";
-  text.innerHTML = `By refusing to exit the Russian market, ${boycottedCompaniesText} ${
-    boycottedCompanies.length > 1 ? "are" : "is"
-  } supporting the war in Ukraine. Their products have been blurred. Please choose something else. <a href="https://github.com/petrussola/boycott-brands-supporting-war/blob/blur/README.md" target="_blank" rel="noopener noreferrer">Read more</a>`;
+  text.innerHTML = `By refusing to exit the Russian market, ${formattedListCompanies} ${
+    listCompanies.length > 1 ? "are" : "is"
+  } supporting the war in Ukraine. Their products have been blurred. Please choose something else. <a href="https://github.com/petrussola/boycott-brands-supporting-war/blob/main/README.md" target="_blank" rel="noopener noreferrer">Read more</a>`;
   close.classList.add("close-button");
   close.innerText = "Close";
   close.addEventListener("click", hideFooter);
@@ -57,81 +229,17 @@ function appendFooter(tileClasses) {
   footer.appendChild(text);
   footer.appendChild(close);
   footer.classList.add("ukraine-footer");
-  const productTiles = document.querySelectorAll(...tileClasses);
-  const productArray = Array.from(productTiles).some((tile) =>
-    checkBoycottedProduct(tile.innerText.toLowerCase())
-  );
-  if (productArray) {
-    document.body.appendChild(footer);
-  }
+  document.body.appendChild(footer);
 }
 
 function hideFooter() {
-  const footer = document.querySelector(".ukraine-footer");
-  footer.style.display = "none";
-}
-
-function findProducts2(tileClasses) {
-  const productTiles = document.querySelectorAll(...tileClasses);
-
-  productTiles.forEach((item) => {
-    const productDescription = item.innerText.toLowerCase();
-    if (checkBoycottedProduct(productDescription)) {
-      item.classList.add("blurred");
-    }
+  const footerCollection = document.getElementsByClassName("ukraine-footer");
+  Array.from(footerCollection).forEach((footer) => {
+    footer.remove();
   });
-  const footerExists = document.querySelector(".ukraine-footer");
-  if (!footerExists) {
-    appendFooter(tileClasses);
-  }
 }
 
-const supermarket = window.location.hostname;
-function chooseHost() {
-  switch (supermarket) {
-    case "www.tesco.com": // DONE
-      findProducts2([".product-list--list-item", ".product-tile-wrapper"]);
-      break;
-    case "www.tesco.ie": // DONE
-      findProducts2([".product-list--list-item", ".product-tile-wrapper"]);
-      break;
-    case "www.ocado.com":
-      findProducts2([".fops-item"]);
-      break;
-    case "shop.supervalu.ie":
-      findProducts2([".product-list-item"]);
-      break;
-    case "www.sainsburys.co.uk": // DONE
-      findProducts2([".pt-grid-item"]);
-      break;
-    case "groceries.asda.com": // DONE
-      findProducts2([".co-item"]);
-      break;
-    case "groceries.morrisons.com": // DONE
-      findProducts2([".fop-item"]);
-      break;
-    case "www.iceland.co.uk": // ONLOAD on every search..
-      findProducts2([".product-tile"]);
-      break;
-    case "shop.jiffygrocery.co.uk": // DONE
-      findProducts2([".product-item"]);
-      break;
-    case "groceries.aldi.co.uk": // ONLOAD on every search..
-      findProducts2([".product-tile"]);
-      break;
-    case "www.amazon.co.uk": // DONE
-      findProducts2([".s-result-item"]);
-      break;
-    // more difficult DOM observation
-    // case 'www.waitrose.com/':
-    //   findProducts2(['.pt-grid-item']);
-    //   break;
-    default:
-      return;
-  }
-}
-
-const brandsAndOwner = {
+const brandsOwnersMap = {
   Nestle: "Nestlé",
   Nestlé: "Nestlé",
   Cerelac: "Nestlé",
@@ -461,7 +569,6 @@ const brandsAndOwner = {
   taft: "Henkel",
   tangit: "Henkel",
   technomelt: "Henkel",
-  tend: "Henkel",
   teraxyl: "Henkel",
   teroson: "Henkel",
   terra: "Henkel",
@@ -561,7 +668,13 @@ const brandsAndOwner = {
   Twix: "Mars",
   Winterfresh: "Mars",
   "Winter Fresh": "Mars",
-  Extra: "Mars",
+  "Wrigleys Extra": "Mars",
+  "Extra Peppermint Gum": "Mars",
+  "Extra White Gum Bottle": "Mars",
+  "Extra Cool Breeze Gum": "Mars",
+  "Extra Ice Peppermint": "Mars",
+  "Extra White Peppermint": "Mars",
+  Airwaves: "Mars",
   Spearmint: "Mars",
   "Ben's": "Mars",
   Dolmio: "Mars",
@@ -579,6 +692,7 @@ const brandsAndOwner = {
   Suziwan: "Mars",
   "tasty bite": "Mars",
   tastybite: "Mars",
+  Revels: "Mars",
   Cadbury: "Mondelēz International",
   "Alpen Gold": "Mondelēz International",
   Barni: "Mondelēz International",
@@ -659,7 +773,13 @@ const brandsAndOwner = {
   ZzzQUIL: "Procter & Gamble",
   Bion3: "Procter & Gamble",
   "Ben & Jerry": "Unilever",
-  Comfort: "Unilever",
+  "Comfort fabric": "Unilever",
+  "Comfort pure": "Unilever",
+  "Comfort dermatologically": "Unilever",
+  "Comfort ultra": "Unilever",
+  "Comfort ulmte": "Unilever",
+  "Comfort blue": "Unilever",
+  "Comfort creations": "Unilever",
   Domestos: "Unilever",
   Dove: "Unilever",
   Hellmann: "Unilever",
@@ -705,9 +825,9 @@ const brandsAndOwner = {
   Duck: "SC Johnson",
   Canard: "SC Johnson",
   Pato: "SC Johnson",
-  Ente: "SC Johnson",
+  "WC-Ente": "SC Johnson",
+  "WC Ente": "SC Johnson",
   Drano: "SC Johnson",
-  Echo: "SC Johnson",
   Fantastik: "SC Johnson",
   "Freedom carpet foam": "SC Johnson",
   Klaro: "SC Johnson",
