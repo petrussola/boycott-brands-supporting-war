@@ -2,7 +2,7 @@
   "name": "Boycott brands refusing to exit Russia",
   "version": "0.0.2",
   "manifest_version": 3,
-  "description": "By refusing to exit the Russian market some western brands are implicitely supporting the war in Ukraine. We can find these brands in our supermarket shelves and we can choose to boycott their products. This Chrome extension highlights these products when buying your groceries online, so it's easy for you to act. ",
+  "description": "By refusing to exit the Russian market some western brands are implicitely supporting the war in Ukraine. We can find these brands in our supermarket shelves and we can choose to boycott their products. This Chrome extension highlights these products when buying your groceries online, so it's easy for you to act.",
   "content_scripts": [
     {
       "js": ["index.js"],
@@ -31,7 +31,7 @@
       "run_at": "document_end"
     }
   ],
-  "permissions": ["scripting"],
+  "permissions": [""],
   "host_permissions": [
     "https://www.tesco.ie/",
     "https://www.tesco.com/",
