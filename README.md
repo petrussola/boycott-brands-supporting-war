@@ -1,3 +1,5 @@
+[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://vshymanskyy.github.io/StandWithUkraine)
+
 ## Chrome extension - Boycott western brands that have refused to exit Russian market
 
 - Currently in MVP stage - targeting only Nestlé.
