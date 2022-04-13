@@ -28,15 +28,27 @@
 
 ### Supermarkets currently targeted
 
-## Ireland
-
+### Ireland
 - Tesco
 - Dunnes
 - Super Valu
 - Fresh
 
-## UK
+### Poland
+- Auchan
+- Frisco
+### Slovakia
+- Alza
+- Mall
+- Tesco
+### Spain
+- Dia
+- Alcampo
+- Carrefour
+- Esclat
+- Eroski
 
+### UK
 - Tesco
 - Ocado
 - Sainsburys
@@ -48,22 +60,8 @@
 - Amazon
 - Waitrose
 
-## Spain
-
-- Dia
-- Alcampo
-- Carrefour
-- Esclat
-- Eroski
-
 ### Screenshots
 
 ![Screenshot 2022-03-18 at 23 08 20](https://user-images.githubusercontent.com/49898713/159095686-7a72a1d7-347c-42bb-8613-ec8f9bfc1c93.png)
 
 ![Screenshot 2022-03-18 at 23 07 34](https://user-images.githubusercontent.com/49898713/159095700-ff74b706-5d46-4e26-9880-00d6fcc7f711.png)
-
-### Todo
-
-- Add Mobile Styling
-- Considering adding persistence of banner hiding
-- Create static page to 'read more' with charity links/information
