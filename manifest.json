@@ -1,6 +1,6 @@
 {
   "name": "Boycott brands refusing to exit Russia",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "manifest_version": 3,
   "description": "You can now easily identify brands refusing to exit the Russian market and boycott their products",
   "content_scripts": [
@@ -26,7 +26,12 @@
         "https://www.dunnesstoresgrocery.com/*",
         "https://freshonline.ie/*",
         "https://supermercado.eroski.es/*",
-        "https://www.waitrose.com/*"
+        "https://www.waitrose.com/*",
+        "https://zakupy.auchan.pl/*",
+        "https://www.frisco.pl/*",
+        "https://www.alza.sk/*",
+        "https://www.mall.sk/*",
+        "https://potravinydomov.itesco.sk/*"
       ],
       "run_at": "document_end"
     }
@@ -50,7 +55,12 @@
     "https://www.dunnesstoresgrocery/",
     "https://freshonline.ie/",
     "https://supermercado.eroski.es/",
-    "https://www.waitrose.com/"
+    "https://www.waitrose.com/",
+    "https://zakupy.auchan.pl/",
+    "https://www.frisco.pl/",
+    "https://www.alza.sk/",
+    "https://www.mall.sk/",
+    "https://potravinydomov.itesco.sk/"
   ],
   "action": {
     "default_icon": {

@@ -16,7 +16,7 @@ function getClassNames() {
       };
     case "www.tesco.com":
       return {
-        mainContentClass: "main__content",
+        mainContentClass: "body",
         productTileClass: "product-list--list-item",
         tileProp: "textContent",
       };
@@ -40,13 +40,13 @@ function getClassNames() {
       };
     case "groceries.asda.com":
       return {
-        mainContentClass: "search-page-content__products-tab-content",
+        mainContentClass: "body",
         productTileClass: "co-item",
         tileProp: "textContent",
       };
     case "groceries.morrisons.com":
       return {
-        mainContentClass: "main-column",
+        mainContentClass: "body",
         productTileClass: "fop-item",
         tileProp: "textContent",
       };
@@ -122,6 +122,36 @@ function getClassNames() {
         productTileClass: "productPod___yz0mm",
         tileProp: "textContent",
       };
+    case "zakupy.auchan.pl":
+      return {
+        mainContentClass: "body",
+        productTileClass: "_48TB",
+        tileProp: "textContent",
+      };
+    case "www.frisco.pl":
+      return {
+        mainContentClass: "catalog-page",
+        productTileClass: "product-box",
+        tileProp: "textContent",
+      };
+    case "www.alza.sk":
+      return {
+        mainContentClass: "body",
+        productTileClass: "browsingitem",
+        tileProp: "textContent",
+      };
+    case "www.mall.sk":
+      return {
+        mainContentClass: "body",
+        productTileClass: "category-products__item",
+        tileProp: "textContent",
+      };
+    case "potravinydomov.itesco.sk":
+      return {
+        mainContentClass: "body",
+        productTileClass: "product-list--list-item",
+        tileProp: "textContent",
+      };
     default:
       return {
         mainContentClass: "",
@@ -150,6 +180,7 @@ function observeDomChanges(contentClassName, productTileClassName, tileProp) {
         (!mutation.previousSibling ||
           mutation.previousSibling.className !== "ukraine-footer")
       ) {
+        console.log(mutation);
         // highlight products
         const listBoycottedCompanies = applyBoycott(
           productTileClassName,
@@ -330,7 +361,7 @@ const brandsOwnersMap = {
   Silk: "Danone",
   Alpro: "Danone",
   Actimel: "Danone",
-  Aqua: "Danone",
+  "Aqua water": "Danone",
   Bonafont: "Danone",
   Evian: "Danone",
   Volvic: "Danone",
@@ -349,7 +380,6 @@ const brandsOwnersMap = {
   Danonino: "Danone",
   Nutricia: "Danone",
   Nutrilon: "Danone",
-  Aqua: "Danone",
   Bledina: "Danone",
   Blédina: "Danone",
   Bonafont: "Danone",
@@ -627,7 +657,7 @@ const brandsOwnersMap = {
   Honig: "Kraft Heinz",
   Plasmon: "Kraft Heinz",
   Quero: "Kraft Heinz",
-  Api: "Mars",
+  "Api fish": "Mars",
   Aquarian: "Mars",
   Buckeye: "Mars",
   Cesar: "Mars",
