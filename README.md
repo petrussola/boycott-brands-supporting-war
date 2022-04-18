@@ -1,16 +1,15 @@
 [![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://vshymanskyy.github.io/StandWithUkraine)
 
-## Chrome extension - Boycott western brands that have refused to exit Russian market
+## Chrome extension - Boycott brands that refuse to exit Russian market
 
-- This extension highlights products and brands owned by the brands in multiple online stores (see below). It blurs the offending items and shows a warning message so you can boycott them (see screenshots below).
+- This extension highlights products and brands owned by the brands in multiple online supermarkets (see below). It blurs the offending items and shows a warning message so you can boycott them (see screenshots below).
 - By refusing to leave the Russian market, these brands are implicitely supporting the war in Ukraine.
 
-### Brands refusing to leave the Russian market (see [#3, #4 and #5 in Yale's tracking document](https://som.yale.edu/story/2022/over-400-companies-have-withdrawn-russia-some-remain))
+### Brands refusing to leave the Russian market (see [Grades C ("Scaling Back"), D ("Buying Time") and F ("Digging In") in Yale's tracking document](https://som.yale.edu/story/2022/over-400-companies-have-withdrawn-russia-some-remain))
 
 - Nestlé
 - Danone
 - Bacardi
-- Carlsberg
 - Pepsico
 - Bayer
 - Colgate-Palmolive
@@ -24,22 +23,33 @@
 - Unilever
 - Barilla
 - SC Johnson
+- Bonduelle
+- Philips
+- AB InBev
+- Chipita
+- De Cecco
+- Borges
+- Grupo Fuertes
+- JDE Peet's
+- Lactalis
+- Storck
+- Zwack
 
 ### Supermarkets currently targeted
 
-### Ireland
+#### Ireland
 
 - Tesco
 - Dunnes
 - Super Valu
 - Fresh
 
-### Poland
+#### Poland
 
 - Auchan
 - Frisco
 
-### Romania
+#### Romania
 
 - Kaufland
 - Carrefour
@@ -47,13 +57,13 @@
 - Metro
 - Auchan
 
-### Slovakia
+#### Slovakia
 
 - Alza
 - Mall
 - Tesco
 
-### Spain
+#### Spain
 
 - Dia
 - Alcampo
@@ -61,7 +71,7 @@
 - Esclat
 - Eroski
 
-### UK
+#### UK
 
 - Tesco
 - Ocado

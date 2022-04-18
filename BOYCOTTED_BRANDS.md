@@ -1,9 +1,8 @@
-This extension currently targets the following companies:
+This extension currently targets companies graded D, F and G by [Yale School of Management](https://som.yale.edu/story/2022/over-750-companies-have-curtailed-operations-russia-some-remain):
 
 - Nestlé
 - Danone
 - Bacardi
-- Carlsberg
 - Pepsico
 - Bayer
 - Colgate-Palmolive
@@ -16,5 +15,15 @@ This extension currently targets the following companies:
 - Procter & Gamble
 - Unilever
 - Barilla
-
-Source: [som.yale.edu/story/2022/over-400-companies-have-withdrawn-russia-some-remain](https://som.yale.edu/story/2022/over-400-companies-have-withdrawn-russia-some-remain)
+- SC Johnson
+- Bonduelle
+- Philips
+- AB InBev
+- Chipita
+- De Cecco
+- Borges
+- Grupo Fuertes
+- JDE Peet's
+- Lactalis
+- Storck
+- Zwack
