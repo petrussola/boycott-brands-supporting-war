@@ -1,4 +1,5 @@
 window.addEventListener("load", () => {
+  console.log("Dom loaded");
   // get the class names
   const { mainContentClass, productTileClass, tileProp } = getClassNames();
   // observe the content tag - add children
@@ -10,145 +11,146 @@ function getClassNames() {
   switch (supermarket) {
     case "www.tesco.ie":
       return {
-        mainContentClass: "main__content",
+        mainContentClass: ["body", "main__content"],
         productTileClass: "product-list--list-item",
         tileProp: "textContent",
       };
     case "www.tesco.com":
       return {
-        mainContentClass: "body",
+        mainContentClass: ["body", "main__content"],
         productTileClass: "product-list--list-item",
         tileProp: "textContent",
       };
     case "www.ocado.com":
       return {
-        mainContentClass: "app-page",
+        mainContentClass: ["app-page", "main-column"],
         productTileClass: "fops-item",
         tileProp: "textContent",
       };
     case "shop.supervalu.ie":
       return {
-        mainContentClass: "body",
+        mainContentClass: ["body"],
         productTileClass: "product-list-item",
         tileProp: "textContent",
       };
     case "www.sainsburys.co.uk":
       return {
-        mainContentClass: "SRF__tileList",
+        mainContentClass: ["SRF__tileList", "shelfPage"],
+        // in some cases i.e. pepsi the product tile class is "product"
         productTileClass: "pt-grid-item",
         tileProp: "textContent",
       };
     case "groceries.asda.com":
       return {
-        mainContentClass: "body",
+        mainContentClass: ["body"],
         productTileClass: "co-item",
         tileProp: "textContent",
       };
     case "groceries.morrisons.com":
       return {
-        mainContentClass: "body",
+        mainContentClass: ["body"],
         productTileClass: "fop-item",
         tileProp: "textContent",
       };
     case "www.iceland.co.uk":
       return {
-        mainContentClass: "body",
+        mainContentClass: ["body"],
         productTileClass: "product-tile",
         tileProp: "textContent",
       };
     case "shop.jiffygrocery.co.uk":
       return {
-        mainContentClass: "w-100p w-min-320",
+        mainContentClass: ["w-100p w-min-320"],
         productTileClass: "product-item",
         tileProp: "textContent",
       };
     case "groceries.aldi.co.uk":
       return {
-        mainContentClass: "body",
+        mainContentClass: ["body"],
         productTileClass: "product-tile",
         tileProp: "textContent",
       };
     case "www.amazon.co.uk":
       return {
-        mainContentClass: "a-aui_72554-c",
+        mainContentClass: ["a-aui_72554-c"],
         productTileClass: "s-result-item",
         tileProp: "innerText",
       };
     case "www.compraonline.bonpreuesclat.cat":
       return {
-        mainContentClass: "layout__Container-sc-1cgl98j-0",
+        mainContentClass: ["layout__Container-sc-1cgl98j-0"],
         productTileClass: "box__Box-sc-4y5e6z-0",
         tileProp: "textContent",
       };
     case "www.dia.es":
       return {
-        mainContentClass: "pageType-ContentPage",
+        mainContentClass: ["pageType-ContentPage"],
         productTileClass: "product-list__item",
         tileProp: "textContent",
       };
     case "www.alcampo.es":
       return {
-        mainContentClass: "body",
+        mainContentClass: ["body"],
         productTileClass: " productGridItemContainer ",
         tileProp: "innerText",
       };
     case "www.carrefour.es":
       return {
-        mainContentClass: "ebx-result-figure",
+        mainContentClass: ["ebx-result-figure"],
         productTileClass: "ebx-result",
         tileProp: "textContent",
       };
     case "www.dunnesstoresgrocery.com":
       return {
-        mainContentClass: "body",
+        mainContentClass: ["body"],
         productTileClass: "ColListing-sc-lcurnl",
         tileProp: "textContent",
       };
     case "freshonline.ie":
       return {
-        mainContentClass: "warehouse--v1",
+        mainContentClass: ["warehouse--v1"],
         productTileClass: "product-item",
         tileProp: "innerText",
       };
     case "supermercado.eroski.es":
       return {
-        mainContentClass: "inbenta--eroski",
+        mainContentClass: ["inbenta--eroski"],
         productTileClass: "product-item-lineal",
         tileProp: "innerText",
       };
     case "www.waitrose.com":
       return {
-        mainContentClass: "body",
+        mainContentClass: ["body"],
         productTileClass: "productPod___yz0mm",
         tileProp: "textContent",
       };
     case "zakupy.auchan.pl":
       return {
-        mainContentClass: "body",
+        mainContentClass: ["body"],
         productTileClass: "_48TB",
         tileProp: "textContent",
       };
     case "www.frisco.pl":
       return {
-        mainContentClass: "catalog-page",
+        mainContentClass: ["catalog-page"],
         productTileClass: "product-box",
         tileProp: "textContent",
       };
     case "www.alza.sk":
       return {
-        mainContentClass: "body",
+        mainContentClass: ["body"],
         productTileClass: "browsingitem",
         tileProp: "textContent",
       };
     case "www.mall.sk":
       return {
-        mainContentClass: "body",
+        mainContentClass: ["body"],
         productTileClass: "category-products__item",
         tileProp: "textContent",
       };
     case "potravinydomov.itesco.sk":
       return {
-        mainContentClass: "body",
+        mainContentClass: ["body"],
         productTileClass: "product-list--list-item",
         tileProp: "textContent",
       };
@@ -162,11 +164,17 @@ function getClassNames() {
 }
 
 function findContentTag(contentTarget) {
-  if (contentTarget === "body") {
-    return (mutation) => mutation.target.localName === contentTarget;
-  } else {
-    return (mutation) => mutation.target.className.includes(contentTarget);
-  }
+  // contentTarget is an array, so we map over it
+  // and save the closures
+  const results = contentTarget.map((ct) => {
+    switch (ct) {
+      case "body":
+        return (mutation) => mutation.target.localName === ct;
+      default:
+        return (mutation) => mutation.target.className.includes(ct);
+    }
+  });
+  return results;
 }
 
 function observeDomChanges(contentClassName, productTileClassName, tileProp) {
@@ -175,21 +183,26 @@ function observeDomChanges(contentClassName, productTileClassName, tileProp) {
     mutations.forEach((mutation) => {
       if (
         mutation.type === "childList" &&
-        mutation.addedNodes.length > 0 &&
-        targetFinder(mutation) &&
         (!mutation.previousSibling ||
           mutation.previousSibling.className !== "ukraine-footer")
       ) {
-        console.log(mutation);
-        // highlight products
-        const listBoycottedCompanies = applyBoycott(
-          productTileClassName,
-          tileProp
-        );
-        // action banner
-        listBoycottedCompanies.length > 0
-          ? showFooter(listBoycottedCompanies)
-          : hideFooter();
+        // iterate over closures and check if
+        // there is one that returns true
+        targetFinder.forEach((tf) => {
+          // if check is true, we proceed
+          if (tf(mutation)) {
+            console.log(mutation);
+            // highlight products
+            const listBoycottedCompanies = applyBoycott(
+              productTileClassName,
+              tileProp
+            );
+            // action banner
+            listBoycottedCompanies.length > 0
+              ? showFooter(listBoycottedCompanies)
+              : hideFooter();
+          }
+        });
       }
     });
   });
@@ -204,7 +217,18 @@ function applyBoycott(productTileClassName, tileProp) {
     const tileText = tile[tileProp].toLowerCase();
     const matchedBrand = isBrandFoundInText(tileText);
     if (matchedBrand) {
-      console.log(matchedBrand, " < ", brandsOwnersMap[matchedBrand]);
+      const index = tileText.indexOf(matchedBrand.toLowerCase());
+      const contextText = tileText.slice(
+        index === 0 ? index : index - 20,
+        index + matchedBrand.length + 20
+      );
+      console.log(
+        matchedBrand,
+        " < ",
+        contextText,
+        " < ",
+        brandsOwnersMap[matchedBrand]
+      );
       applyBlur(tile);
       addCompanyToBoycottedList(
         brandsOwnersMap[matchedBrand],
@@ -216,7 +240,10 @@ function applyBoycott(productTileClassName, tileProp) {
 }
 
 function isBrandFoundInText(text) {
+  // get array from brands
   const brands = Object.keys(brandsOwnersMap);
+  // iterate over brand and return boolean depending
+  // on whether brand has been found in text or not
   const matchedBrand = brands.find((brand) =>
     text.includes(brand.toLowerCase())
   );
@@ -820,7 +847,10 @@ const brandsOwnersMap = {
   Knorr: "Unilever",
   Lifebuoy: "Unilever",
   Magnum: "Unilever",
-  Omo: "Unilever",
+  "Omo laundry": "Unilever",
+  "Omo sensitive": "Unilever",
+  "Omo active": "Unilever",
+  "Omo touch": "Unilever",
   Rexona: "Unilever",
   "Seventh Generation": "Unilever",
   Sunsilk: "Unilever",
