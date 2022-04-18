@@ -31,7 +31,12 @@
         "https://www.frisco.pl/*",
         "https://www.alza.sk/*",
         "https://www.mall.sk/*",
-        "https://potravinydomov.itesco.sk/*"
+        "https://potravinydomov.itesco.sk/*",
+        "https://www.kaufland.ro/*",
+        "https://carrefour.ro/*",
+        "https://www.mega-image.ro/*",
+        "https://produse.metro.ro/*",
+        "https://www.auchan.ro/*"
       ],
       "run_at": "document_end"
     }
@@ -60,7 +65,12 @@
     "https://www.frisco.pl/",
     "https://www.alza.sk/",
     "https://www.mall.sk/",
-    "https://potravinydomov.itesco.sk/"
+    "https://potravinydomov.itesco.sk/",
+    "https://www.kaufland.ro/",
+    "https://carrefour.ro/",
+    "https://www.mega-image.ro/",
+    "https://produse.metro.ro/",
+    "https://www.auchan.ro/"
   ],
   "action": {
     "default_icon": {

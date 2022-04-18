@@ -1,17 +1,31 @@
 ### Ireland
+
 - Tesco
 - Dunnes
 - Super Valu
 - Fresh
 
 ### Poland
+
 - Auchan
 - Frisco
+
+### Romania
+
+- Kaufland
+- Carrefour
+- Mega Image
+- Metro
+- Auchan
+
 ### Slovakia
+
 - Alza
 - Mall
 - Tesco
+
 ### Spain
+
 - Dia
 - Alcampo
 - Carrefour
@@ -19,6 +33,7 @@
 - Eroski
 
 ### UK
+
 - Tesco
 - Ocado
 - Sainsburys
@@ -29,4 +44,3 @@
 - Aldi
 - Amazon
 - Waitrose
-

@@ -154,6 +154,36 @@ function getClassNames() {
         productTileClass: "product-list--list-item",
         tileProp: "textContent",
       };
+    case "www.kaufland.ro":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "t-search-result__list-item",
+        tileProp: "textContent",
+      };
+    case "carrefour.ro":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product-item",
+        tileProp: "textContent",
+      };
+    case "www.mega-image.ro":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product-item",
+        tileProp: "textContent",
+      };
+    case "produse.metro.ro":
+      return {
+        mainContentClass: ["body", "mfcss"],
+        productTileClass: "mfcss_article-wrapper",
+        tileProp: "textContent",
+      };
+    case "www.auchan.ro":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "prefixbox-product-container",
+        tileProp: "textContent",
+      };
     default:
       return {
         mainContentClass: "",
