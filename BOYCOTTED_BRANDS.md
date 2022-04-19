@@ -6,7 +6,6 @@ This extension currently targets companies graded D, F and G by [Yale School of 
 - Pepsico
 - Bayer
 - Colgate-Palmolive
-- Henkel
 - Kellogg's
 - Kraft Heinz
 - Mars

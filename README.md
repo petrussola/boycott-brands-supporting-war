@@ -13,7 +13,6 @@
 - Pepsico
 - Bayer
 - Colgate-Palmolive
-- Henkel
 - Kellogg's
 - Kraft Heinz
 - Mars
