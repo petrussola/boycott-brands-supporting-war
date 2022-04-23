@@ -386,11 +386,109 @@ function getClassNames() {
         productTileClass: "grid-item",
         tileProp: "textContent",
       };
-    case "compraonline.e-leclerc.es":
+    case "www.costco.com":
       return {
-        mainContentClass: ["more_results"],
-        productTileClass: "grid-item",
+        mainContentClass: ["body"],
+        productTileClass: "product",
         tileProp: "textContent",
+      };
+    // IS DOWN NOW
+    case "www.walmart.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "mb1",
+        tileProp: "textContent",
+      };
+    case "www.target.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "ebNJlV",
+        tileProp: "textContent",
+      };
+    case "www.instacart.com":
+      return {
+        mainContentClass: ["body", "css-hshm0p"],
+        productTileClass: "css-er4k5d",
+        tileProp: "textContent",
+      };
+    case "www.amazon.com":
+      return {
+        mainContentClass: ["a-aui_72554-c"],
+        productTileClass: "s-result-item",
+        tileProp: "innerText",
+      };
+    case "www.google.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "sh-dgr__grid-result",
+        tileProp: "innerText",
+      };
+    case "www.kroger.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "AutoGrid-cell",
+        tileProp: "innerText",
+      };
+    case "www.wholefoodsmarket.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "w-pie--product-tile",
+        tileProp: "innerText",
+      };
+    case "www.harristeeter.com":
+      return {
+        mainContentClass: ["body", "PaginateItems"],
+        productTileClass: "AutoGrid-cell",
+        tileProp: "innerText",
+      };
+    case "www.safeway.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "card",
+        tileProp: "innerText",
+      };
+    case "shop.foodlion.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product-wrapper",
+        tileProp: "innerText",
+      };
+    case "www.albertsons.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "card",
+        tileProp: "innerText",
+      };
+    case "www.vons.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "card",
+        tileProp: "innerText",
+      };
+    case "www.jewelosco.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "card",
+        tileProp: "innerText",
+      };
+    case "www.acmemarkets.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "card",
+        tileProp: "innerText",
+      };
+    case "www.shaws.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "card",
+        tileProp: "innerText",
+      };
+    // NOT WORKING
+    case "stopandshop.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product-cell",
+        tileProp: "innerText",
       };
     default:
       return {
@@ -548,7 +646,9 @@ const brandsOwnersMap = {
   Pellegrino: "Nestlé",
   Cheerios: "Nestlé",
   Fitness: "Nestlé",
-  Lion: "Nestlé",
+  "Nestle Lion": "Nestlé",
+  "Nestlé Lion": "Nestlé",
+  "Lion bar": "Nestlé",
   Nesquik: "Nestlé",
   Aero: "Nestlé",
   Cailler: "Nestlé",
@@ -947,7 +1047,6 @@ const brandsOwnersMap = {
   Bango: "Unilever",
   Axe: "Unilever",
   Cif: "Unilever",
-  Comfort: "Unilever",
   "The Vegetarian Butcher": "Unilever",
   Equilibra: "Unilever",
   Olly: "Unilever",

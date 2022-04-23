@@ -10,7 +10,8 @@
   - Lithuania (lastmile.lt, Čia Market, Eurokos, Vynoteka.lt, Rimi)
   - Finland (K-Market, Alko, Prisma, S-Market, Sale, Alepa, Herkku, Sokos Herkku, Mestarin Herkku)
   - Sweden (City Gross, Coop, ICA, Willys, Hemkop)
-  - Spain (Hipercor, El Corte Inglés, Leclerc)
+  - Spain (Hipercor, El Corte Inglés)
+  - United States (Costco, Walmart, Target, Instacart, Amazon, Google Shopping, Kroger, Whole Foods, Harris Teeter, Safeway, Food Lion, Albertsons, Vons, Jewel-Osco, Acme, Stop & Shop)
 
 - Overlay footer on top of cookies banners
 

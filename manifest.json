@@ -71,7 +71,23 @@
         "https://www.elcorteingles.es/supermercado/*",
         "https://www.elcorteingles.es/supermarket/*",
         "https://www.elcorteingles.es/supermarkt/*",
-        "https://compraonline.e-leclerc.es/*"
+        "https://www.costco.com/*",
+        "https://www.walmart.com/*",
+        "https://www.target.com/*",
+        "https://www.instacart.com/store/*",
+        "https://www.amazon.com/*",
+        "https://www.google.com/search*",
+        "https://www.kroger.com/*",
+        "https://www.wholefoodsmarket.com/*",
+        "https://www.harristeeter.com/*",
+        "https://www.safeway.com/*",
+        "https://shop.foodlion.com/*",
+        "https://www.albertsons.com/*",
+        "https://www.vons.com/*",
+        "https://www.jewelosco.com/*",
+        "https://www.acmemarkets.com/*",
+        "https://www.shaws.com/*",
+        "https://www.stopandshop.com/*"
       ],
       "run_at": "document_end"
     }
@@ -140,7 +156,23 @@
     "https://www.hipercor.es/supermercado/",
     "https://www.elcorteingles.es/supermarket",
     "https://www.elcorteingles.es/supermarkt",
-    "https://compraonline.e-leclerc.es/"
+    "https://www.costco.com/",
+    "https://www.walmart.com/",
+    "https://www.target.com/",
+    "https://www.instacart.com/store",
+    "https://www.amazon.com/",
+    "https://www.google.com/search",
+    "https://www.kroger.com/",
+    "https://www.wholefoodsmarket.com/",
+    "https://www.harristeeter.com/",
+    "https://www.safeway.com/",
+    "https://shop.foodlion.com/",
+    "https://www.albertsons.com/",
+    "https://www.vons.com/",
+    "https://www.jewelosco.com/",
+    "https://www.acmemarkets.com/",
+    "https://www.shaws.com/",
+    "https://www.stopandshop.com/"
   ],
   "action": {
     "default_icon": {
