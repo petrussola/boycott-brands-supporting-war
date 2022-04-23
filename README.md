@@ -22,6 +22,7 @@
 - Unilever
 - Barilla
 - SC Johnson
+- Kimberly-Clark
 - Bonduelle
 - Philips
 - AB InBev
@@ -33,6 +34,21 @@
 - Lactalis
 - Storck
 - Zwack
+- Anecoop
+- Campari
+- Carmim
+- Delonghi
+- Ehrmann
+- Gruma
+- Hochland
+- Japan Tobacco
+- Johnson & Johnson
+- Red Bull
+- Ritter Sport
+- Beiersdorf
+- Ferrero
+- General Mills
+- Herbalife
 
 ### Supermarkets currently targeted
 

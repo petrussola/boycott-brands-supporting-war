@@ -1,10 +1,21 @@
-### 1.0.2 - 19/04/2022
+### 1.0.2 - 23/04/2022
 
-- Remove Henkel - they exited the RU market
+- Remove Henkel - exited RU market
+- Add additional grade C, D brands
+- Add supermarkets in:
+
+  - Germany (Rewe, Amazon, Flaschenpost, Bringmeister, Lidl)
+  - Estonia (Coop, Rimi, Selver, Prisma Peremarket)
+  - Latvia (Barbora.lv, Rimi, Top!, Citro, Drogas)
+  - Lithuania (lastmile.lt, Čia Market, Eurokos, Vynoteka.lt, Rimi)
+  - Finland (K-Market, Alko, Prisma, S-Market, Sale, Alepa, Herkku, Sokos Herkku, Mestarin Herkku)
+  - Sweden (City Gross, Coop, ICA, Willys, Hemkop)
+  - Spain (Hipercor, El Corte Inglés, Leclerc)
+
+- Overlay footer on top of cookies banners
 
 ### 1.0.1 - 18/04/2022
 
 - Add Romania supermarkets
-- Add additional grade F brands 
+- Add additional grade F brands
 - Bug fixes
-
