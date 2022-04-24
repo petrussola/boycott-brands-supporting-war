@@ -105,7 +105,9 @@
         "https://megamarket.ua/*",
         "https://zakaz.atbmarket.com/*",
         "https://shop.silpo.ua/*",
-        "https://shop.nashkraj.ua/*"
+        "https://shop.nashkraj.ua/*",
+        "https://www.capraboacasa.com/*",
+        "https://compraonline.e-leclerc.es/*"
       ],
       "run_at": "document_end"
     }
@@ -208,7 +210,9 @@
     "https://megamarket.ua/",
     "https://zakaz.atbmarket.com/",
     "https://shop.silpo.ua/",
-    "https://shop.nashkraj.ua/"
+    "https://shop.nashkraj.ua/",
+    "https://www.capraboacasa.com/",
+    "https://compraonline.e-leclerc.es/"
   ],
   "action": {
     "default_icon": {

@@ -602,6 +602,18 @@ function getClassNames() {
         productTileClass: "image_group",
         tileProp: "textContent",
       };
+    case "www.capraboacasa.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product",
+        tileProp: "textContent",
+      };
+    case "compraonline.e-leclerc.es":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "productos_producto-tarjetaV2",
+        tileProp: "textContent",
+      };
     default:
       return {
         mainContentClass: "",
@@ -1305,7 +1317,6 @@ const brandsOwnersMap = {
   "Douwe Egberts": "JDE Peet's",
   Kenco: "JDE Peet's",
   "Peet's": "JDE Peet's",
-  "L'or": "JDE Peet's",
   Stumptown: "JDE Peet's",
   Tassimo: "JDE Peet's",
   Gevalia: "JDE Peet's",
