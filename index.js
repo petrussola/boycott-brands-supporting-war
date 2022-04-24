@@ -733,7 +733,6 @@ function showFooter(listCompanies) {
   const footer = document.createElement("div");
   const flag = document.createElement("div");
   const text = document.createElement("div");
-  const close = document.createElement("div");
   flag.innerText = "🇺🇦";
   flag.ariaRoleDescription = "Ukrainian Flag";
   flag.ariaLabel = "Ukrainian Flag";
@@ -741,12 +740,8 @@ function showFooter(listCompanies) {
   text.innerHTML = `By refusing to exit the Russian market, ${formattedListCompanies} ${
     listCompanies.length > 1 ? "are" : "is"
   } supporting the war in Ukraine. Their products have been blurred. Please choose something else. <a href="https://github.com/petrussola/boycott-brands-supporting-war/blob/main/README.md" target="_blank" rel="noopener noreferrer">Read more</a>`;
-  close.classList.add("close-button");
-  close.innerText = "Close";
-  close.addEventListener("click", hideFooter);
   footer.appendChild(flag);
   footer.appendChild(text);
-  footer.appendChild(close);
   footer.classList.add("ukraine-footer");
   document.body.appendChild(footer);
 }
