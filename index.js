@@ -641,7 +641,6 @@ function observeDomChanges(contentClassName, productTileClassName, tileProp) {
   const targetFinder = findContentTag(contentClassName);
   const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
-      console.log(mutation);
       if (
         mutation.type === "childList" &&
         (!mutation.previousSibling ||
@@ -1270,21 +1269,6 @@ const brandsOwnersMap = {
   Plenitud: "Kimberly-Clark",
   Bonduelle: "Bonduelle",
   Philips: "Philips",
-  Aguila: "AB InBev",
-  "Beck's": "AB InBev",
-  Becks: "AB InBev",
-  Brahma: "AB InBev",
-  Budweiser: "AB InBev",
-  Cass: "AB InBev",
-  Corona: "AB InBev",
-  "Eagel Lager": "AB InBev",
-  "Hero beer": "AB InBev",
-  "Jupiter Beer": "AB InBev",
-  Leffe: "AB InBev",
-  "Modelo Beer": "AB InBev",
-  "Patagonia Beer": "AB InBev",
-  "Victoria Beer": "AB InBev",
-  "Wals Brut": "AB InBev",
   "7 days": "Chipita",
   "7days": "Chipita",
   Fineti: "Chipita",
@@ -1410,7 +1394,7 @@ const brandsOwnersMap = {
   "Régia Colheita": "Carmim",
   "Bom juiz": "Carmim",
   Delonghi: "Delonghi",
-  ehrmann: "ehrmann",
+  ehrmann: "Ehrmann",
   Maseca: "Gruma",
   "Mission tortilla": "Gruma",
   Lacima: "Gruma",
