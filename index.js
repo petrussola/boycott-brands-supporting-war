@@ -156,7 +156,7 @@ function getClassNames() {
       };
     case "potravinydomov.itesco.sk":
       return {
-        mainContentClass: ["body"],
+        mainContentClass: ["body", "main__content"],
         productTileClass: "product-list--list-item",
         tileProp: "textContent",
       };
@@ -657,6 +657,9 @@ function observeDomChanges(contentClassName, productTileClassName, tileProp) {
               productTileClassName,
               tileProp
             );
+            if (mutation.removedNodes[0]?.className === "ukraine-footer") {
+              return;
+            }
             // action banner
             listBoycottedCompanies.length > 0
               ? showFooter(listBoycottedCompanies)
@@ -733,6 +736,7 @@ function showFooter(listCompanies) {
   const footer = document.createElement("div");
   const flag = document.createElement("div");
   const text = document.createElement("div");
+  const close = document.createElement("div");
   flag.innerText = "🇺🇦";
   flag.ariaRoleDescription = "Ukrainian Flag";
   flag.ariaLabel = "Ukrainian Flag";
@@ -740,8 +744,12 @@ function showFooter(listCompanies) {
   text.innerHTML = `By refusing to exit the Russian market, ${formattedListCompanies} ${
     listCompanies.length > 1 ? "are" : "is"
   } supporting the war in Ukraine. Their products have been blurred. Please choose something else. <a href="https://github.com/petrussola/boycott-brands-supporting-war/blob/main/README.md" target="_blank" rel="noopener noreferrer">Read more</a>`;
+  close.classList.add("close-button");
+  close.innerText = "Close";
+  close.addEventListener("click", hideFooter);
   footer.appendChild(flag);
   footer.appendChild(text);
+  footer.appendChild(close);
   footer.classList.add("ukraine-footer");
   document.body.appendChild(footer);
 }
@@ -1163,7 +1171,20 @@ const brandsOwnersMap = {
   Sunsilk: "Unilever",
   "Wall's": "Unilever",
   Bango: "Unilever",
-  Axe: "Unilever",
+  Lynx: "Unilever",
+  "Axe desodorante": "Unilever",
+  "Axe deodorant": "Unilever",
+  "desodorante Axe": "Unilever",
+  "deodorant Axe": "Unilever",
+  "dark temptation": "Unilever",
+  "black rock axe": "Unilever",
+  "black gel": "Unilever",
+  "cookies axe": "Unilever",
+  "cedro axe": "Unilever",
+  "spray axe": "Unilever",
+  "axe spray": "Unilever",
+  "chill axe": "Unilever",
+  "black axe": "Unilever",
   Cif: "Unilever",
   "The Vegetarian Butcher": "Unilever",
   Equilibra: "Unilever",
