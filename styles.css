@@ -18,7 +18,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  z-index: 99;
+  z-index: 999999999;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
   background-clip: padding-box;
   font-size: 14px;

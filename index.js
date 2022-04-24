@@ -2,6 +2,12 @@ window.addEventListener("load", () => {
   console.log("Dom loaded");
   // get the class names
   const { mainContentClass, productTileClass, tileProp } = getClassNames();
+  // highlight products
+  const listBoycottedCompanies = applyBoycott(productTileClass, tileProp);
+  // action banner
+  listBoycottedCompanies.length > 0
+    ? showFooter(listBoycottedCompanies)
+    : hideFooter();
   // observe the content tag - add children
   observeDomChanges(mainContentClass, productTileClass, tileProp);
 });
@@ -150,7 +156,7 @@ function getClassNames() {
       };
     case "potravinydomov.itesco.sk":
       return {
-        mainContentClass: ["body"],
+        mainContentClass: ["body", "main__content"],
         productTileClass: "product-list--list-item",
         tileProp: "textContent",
       };
@@ -182,6 +188,430 @@ function getClassNames() {
       return {
         mainContentClass: ["body"],
         productTileClass: "prefixbox-product-container",
+        tileProp: "textContent",
+      };
+    case "www.rewe.de":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product-card",
+        tileProp: "textContent",
+      };
+    case "www.amazon.de":
+      return {
+        mainContentClass: ["a-aui_72554-c"],
+        productTileClass: "s-result-item",
+        tileProp: "innerText",
+      };
+    case "www.flaschenpost.de":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "fp_product",
+        tileProp: "textContent",
+      };
+    case "www.bringmeister.de":
+      return {
+        mainContentClass: ["body", "css-vherbg"],
+        productTileClass: "styles_productwrapper__2UcI7",
+        tileProp: "textContent",
+      };
+    case "www.lidl.de":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "s-grid__item",
+        tileProp: "textContent",
+      };
+    case "ecoop.ee":
+      return {
+        mainContentClass: ["products-wrapper"],
+        productTileClass: "item",
+        tileProp: "textContent",
+      };
+    case "www.rimi.ee":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product-grid__item",
+        tileProp: "textContent",
+      };
+    case "www.selver.ee":
+      return {
+        mainContentClass: ["body", "products-view"],
+        productTileClass: "ProductCard",
+        tileProp: "textContent",
+      };
+    case "www.prismamarket.ee":
+      return {
+        mainContentClass: ["body", "page"],
+        productTileClass: "item",
+        tileProp: "textContent",
+      };
+    case "barbora.lv":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "b-product--wrap2",
+        tileProp: "textContent",
+      };
+    case "www.rimi.lv":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product-grid__item",
+        tileProp: "textContent",
+      };
+    case "etop.lv":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product-grid",
+        tileProp: "textContent",
+      };
+    case "etoppiegade.lv":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product-grid",
+        tileProp: "textContent",
+      };
+    case "rezekne.citro.lv":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product",
+        tileProp: "textContent",
+      };
+    case "ventspils.citro.lv":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product",
+        tileProp: "textContent",
+      };
+    case "www.drogas.lv":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "plp-product-grid__item",
+        tileProp: "textContent",
+      };
+    case "lastmile.lt":
+      return {
+        mainContentClass: ["body", "css-y2x73b"],
+        productTileClass: "css-1o99j7c",
+        tileProp: "textContent",
+      };
+    case "parduotuve.ciamarket.lt":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product-miniature",
+        tileProp: "textContent",
+      };
+    case "www.eurokos.lt":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "col-sm-4",
+        tileProp: "textContent",
+      };
+    case "vynoteka.lt":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product-card__wrapper",
+        tileProp: "textContent",
+      };
+    case "www.rimi.lt":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product-grid__item",
+        tileProp: "textContent",
+      };
+    case "www.k-ruoka.fi":
+      return {
+        mainContentClass: ["body", "product-search-result-list"],
+        productTileClass: "bundle-list-item",
+        tileProp: "textContent",
+      };
+    case "www.alko.fi":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "mini-card-wrap",
+        tileProp: "textContent",
+      };
+    case "www.s-kaupat.fi":
+      return {
+        mainContentClass: ["body", "sc-1z3de1-1"],
+        productTileClass: "sc-1ts9eyk-3",
+        tileProp: "textContent",
+      };
+    case "www.foodie.fi":
+      return {
+        mainContentClass: ["body", "js-products-container"],
+        productTileClass: "item",
+        tileProp: "textContent",
+      };
+    case "www.tokmanni.fi":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "kuName",
+        tileProp: "textContent",
+      };
+    case "www.citygross.se":
+      return {
+        mainContentClass: [
+          "body",
+          "m-searchresultpage__content",
+          "product-image",
+        ],
+        productTileClass: "productcard-container",
+        tileProp: "textContent",
+      };
+    case "www.coop.se":
+      return {
+        mainContentClass: ["body", "Section"],
+        productTileClass: "Grid-cell",
+        tileProp: "textContent",
+      };
+    case "www.ica.se":
+      return {
+        mainContentClass: ["body", "sc-hxaKgE"],
+        productTileClass: "sc-gIBoTZ",
+        tileProp: "textContent",
+      };
+    case "www.willys.se":
+      return {
+        mainContentClass: ["Gridstyles__StyledGrid-sc-p13gvi-0"],
+        productTileClass: "Productstyles__StyledProduct-sc-16nua0l-0",
+        tileProp: "textContent",
+      };
+    case "www.hemkop.se":
+      return {
+        mainContentClass: ["body", "ax-layout-content"],
+        productTileClass: "ax-product-grid-tile",
+        tileProp: "textContent",
+      };
+    case "www.hipercor.es":
+      return {
+        mainContentClass: ["more_results"],
+        productTileClass: "grid-item",
+        tileProp: "textContent",
+      };
+    case "www.elcorteingles.es":
+      return {
+        mainContentClass: ["more_results"],
+        productTileClass: "grid-item",
+        tileProp: "textContent",
+      };
+    case "www.costco.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product",
+        tileProp: "textContent",
+      };
+    case "www.walmart.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "w-25",
+        tileProp: "textContent",
+      };
+    case "www.target.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "ebNJlV",
+        tileProp: "textContent",
+      };
+    case "www.instacart.com":
+      return {
+        mainContentClass: ["body", "css-hshm0p"],
+        productTileClass: "css-er4k5d",
+        tileProp: "textContent",
+      };
+    case "www.amazon.com":
+      return {
+        mainContentClass: ["a-aui_72554-c"],
+        productTileClass: "s-result-item",
+        tileProp: "innerText",
+      };
+    case "www.google.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "sh-dgr__grid-result",
+        tileProp: "innerText",
+      };
+    case "www.kroger.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "AutoGrid-cell",
+        tileProp: "innerText",
+      };
+    case "www.wholefoodsmarket.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "w-pie--product-tile",
+        tileProp: "innerText",
+      };
+    case "www.harristeeter.com":
+      return {
+        mainContentClass: ["body", "PaginateItems"],
+        productTileClass: "AutoGrid-cell",
+        tileProp: "innerText",
+      };
+    case "www.safeway.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "card",
+        tileProp: "innerText",
+      };
+    case "shop.foodlion.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product-wrapper",
+        tileProp: "innerText",
+      };
+    case "www.albertsons.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "card",
+        tileProp: "innerText",
+      };
+    case "www.vons.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "card",
+        tileProp: "innerText",
+      };
+    case "www.jewelosco.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "card",
+        tileProp: "innerText",
+      };
+    case "www.acmemarkets.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "card",
+        tileProp: "innerText",
+      };
+    case "www.shaws.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "card",
+        tileProp: "innerText",
+      };
+    case "stopandshop.com":
+      return {
+        mainContentClass: ["body", "product-view-search"],
+        productTileClass: "product-cell",
+        tileProp: "innerText",
+      };
+    case "giantfoodstores.com":
+      return {
+        mainContentClass: ["body", "product-view-search"],
+        productTileClass: "product-cell",
+        tileProp: "innerText",
+      };
+    case "giantfood.com":
+      return {
+        mainContentClass: ["body", "product-view-search"],
+        productTileClass: "product-cell",
+        tileProp: "innerText",
+      };
+    case "www.hannaford.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product-impressions",
+        tileProp: "innerText",
+      };
+    case "megamarket.zakaz.ua":
+      return {
+        mainContentClass: ["body", "search-result"],
+        productTileClass: "ProductsBox__listItem",
+        tileProp: "textContent",
+      };
+    case "varus.zakaz.ua":
+      return {
+        mainContentClass: ["body", "search-result"],
+        productTileClass: "ProductsBox__listItem",
+        tileProp: "textContent",
+      };
+    case "novus.zakaz.ua":
+      return {
+        mainContentClass: ["body", "search-result"],
+        productTileClass: "ProductsBox__listItem",
+        tileProp: "textContent",
+      };
+    case "pchelka.zakaz.ua":
+      return {
+        mainContentClass: ["body", "search-result"],
+        productTileClass: "ProductsBox__listItem",
+        tileProp: "textContent",
+      };
+    case "eko.zakaz.ua":
+      return {
+        mainContentClass: ["body", "search-result"],
+        productTileClass: "ProductsBox__listItem",
+        tileProp: "textContent",
+      };
+    case "ultramarket.zakaz.ua":
+      return {
+        mainContentClass: ["body", "search-result"],
+        productTileClass: "ProductsBox__listItem",
+        tileProp: "textContent",
+      };
+    case "auchan.zakaz.ua":
+      return {
+        mainContentClass: ["body", "search-result"],
+        productTileClass: "ProductsBox__listItem",
+        tileProp: "textContent",
+      };
+    case "cosmos.zakaz.ua":
+      return {
+        mainContentClass: ["body", "search-result"],
+        productTileClass: "ProductsBox__listItem",
+        tileProp: "textContent",
+      };
+    case "tavriav.zakaz.ua":
+      return {
+        mainContentClass: ["body", "search-result"],
+        productTileClass: "ProductsBox__listItem",
+        tileProp: "textContent",
+      };
+    case "auchan.ua":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "item_in_grid__2RO1F",
+        tileProp: "textContent",
+      };
+    case "fozzyshop.ua":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product-miniature",
+        tileProp: "textContent",
+      };
+    case "megamarket.ua":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product",
+        tileProp: "textContent",
+      };
+    case "zakaz.atbmarket.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "catalog-item",
+        tileProp: "textContent",
+      };
+    case "shop.silpo.ua":
+      return {
+        mainContentClass: ["body", "product-list__wrapper"],
+        productTileClass: "product-list-item",
+        tileProp: "textContent",
+      };
+    case "shop.nashkraj.ua":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "image_group",
+        tileProp: "textContent",
+      };
+    case "www.capraboacasa.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product",
+        tileProp: "textContent",
+      };
+    case "compraonline.e-leclerc.es":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "productos_producto-tarjetaV2",
         tileProp: "textContent",
       };
     default:
@@ -227,6 +657,9 @@ function observeDomChanges(contentClassName, productTileClassName, tileProp) {
               productTileClassName,
               tileProp
             );
+            if (mutation.removedNodes[0]?.className === "ukraine-footer") {
+              return;
+            }
             // action banner
             listBoycottedCompanies.length > 0
               ? showFooter(listBoycottedCompanies)
@@ -243,6 +676,7 @@ function observeDomChanges(contentClassName, productTileClassName, tileProp) {
 function applyBoycott(productTileClassName, tileProp) {
   const boycottedCompanies = [];
   const productTiles = document.getElementsByClassName(productTileClassName);
+  console.log("## These are the products identified by the boycott extension. Useful for debugging purposes. ##")
   Array.from(productTiles).forEach((tile) => {
     const tileText = tile[tileProp].toLowerCase();
     const matchedBrand = isBrandFoundInText(tileText);
@@ -266,6 +700,7 @@ function applyBoycott(productTileClassName, tileProp) {
       );
     }
   });
+  console.log("## End of the list of identified products. ##")
   return boycottedCompanies;
 }
 
@@ -339,7 +774,9 @@ const brandsOwnersMap = {
   Pellegrino: "Nestlé",
   Cheerios: "Nestlé",
   Fitness: "Nestlé",
-  Lion: "Nestlé",
+  "Nestle Lion": "Nestlé",
+  "Nestlé Lion": "Nestlé",
+  "Lion bar": "Nestlé",
   Nesquik: "Nestlé",
   Aero: "Nestlé",
   Cailler: "Nestlé",
@@ -415,7 +852,14 @@ const brandsOwnersMap = {
   Oikos: "Danone",
   Delight: "Danone",
   Danonino: "Danone",
-  Silk: "Danone",
+  "Silk danone": "Danone",
+  "Silk cashew": "Danone",
+  "Silk coconut": "Danone",
+  "Silk almond": "Danone",
+  "Silk dairy": "Danone",
+  "Silk soymilk": "Danone",
+  "Silk protein": "Danone",
+  "Silk creamer": "Danone",
   Alpro: "Danone",
   Actimel: "Danone",
   "Aqua water": "Danone",
@@ -521,6 +965,7 @@ const brandsOwnersMap = {
   Filorga: "Colgate-Palmolive",
   Eltamd: "Colgate-Palmolive",
   Danklorix: "Colgate-Palmolive",
+  Pringles: "Kellogg's",
   "Coco Pops": "Kellogg's",
   Cocopops: "Kellogg's",
   "Crunchy Nut": "Kellogg's",
@@ -728,9 +1173,21 @@ const brandsOwnersMap = {
   Sunsilk: "Unilever",
   "Wall's": "Unilever",
   Bango: "Unilever",
-  Axe: "Unilever",
+  Lynx: "Unilever",
+  "Axe desodorante": "Unilever",
+  "Axe deodorant": "Unilever",
+  "desodorante Axe": "Unilever",
+  "deodorant Axe": "Unilever",
+  "dark temptation": "Unilever",
+  "black rock axe": "Unilever",
+  "black gel": "Unilever",
+  "cookies axe": "Unilever",
+  "cedro axe": "Unilever",
+  "spray axe": "Unilever",
+  "axe spray": "Unilever",
+  "chill axe": "Unilever",
+  "black axe": "Unilever",
   Cif: "Unilever",
-  Comfort: "Unilever",
   "The Vegetarian Butcher": "Unilever",
   Equilibra: "Unilever",
   Olly: "Unilever",
@@ -830,21 +1287,6 @@ const brandsOwnersMap = {
   Plenitud: "Kimberly-Clark",
   Bonduelle: "Bonduelle",
   Philips: "Philips",
-  Aguila: "AB InBev",
-  "Beck's": "AB InBev",
-  Becks: "AB InBev",
-  Brahma: "AB InBev",
-  Budweiser: "AB InBev",
-  Cass: "AB InBev",
-  Corona: "AB InBev",
-  "Eagel Lager": "AB InBev",
-  "Hero beer": "AB InBev",
-  "Jupiter Beer": "AB InBev",
-  Leffe: "AB InBev",
-  "Modelo Beer": "AB InBev",
-  "Patagonia Beer": "AB InBev",
-  "Victoria Beer": "AB InBev",
-  "Wals Brut": "AB InBev",
   "7 days": "Chipita",
   "7days": "Chipita",
   Fineti: "Chipita",
@@ -877,7 +1319,6 @@ const brandsOwnersMap = {
   "Douwe Egberts": "JDE Peet's",
   Kenco: "JDE Peet's",
   "Peet's": "JDE Peet's",
-  "L'or": "JDE Peet's",
   Stumptown: "JDE Peet's",
   Tassimo: "JDE Peet's",
   Gevalia: "JDE Peet's",
@@ -939,4 +1380,178 @@ const brandsOwnersMap = {
   Bendicks: "Storck",
   "Bunte Welt": "Storck",
   Zwack: "Zwack",
+  Bouquet: "Anecoop",
+  Naturane: "Anecoop",
+  "Bouquet Bio": "Anecoop",
+  "Bouquet Naturane Zero": "Anecoop",
+  "Black Cat": "Anecoop",
+  "Nadal Anecoop": "Anecoop",
+  "Amatista Moscato": "Anecoop",
+  "Icono Merlot": "Anecoop",
+  "Icono Cabernet Sauvignon": "Anecoop",
+  "Icono Chardonnay": "Anecoop",
+  "Icono seleccion": "Anecoop",
+  "Icono selección": "Anecoop",
+  "Icono Syrah": "Anecoop",
+  "Juan de juanes": "Anecoop",
+  "lvec blue": "Anecoop",
+  "lvec green": "Anecoop",
+  "lvec orange": "Anecoop",
+  Reymos: "Anecoop",
+  "Venta del Puerto": "Anecoop",
+  "Vida moscato": "Anecoop",
+  Campari: "Campari",
+  Carmim: "Carmim",
+  Reguengos: "Carmim",
+  Olaria: "Carmim",
+  Monsaraz: "Carmim",
+  Pátria: "Carmim",
+  "Terras d'el Rei": "Carmim",
+  "Real Grei": "Carmim",
+  "Regia Colheita": "Carmim",
+  "Régia Colheita": "Carmim",
+  "Bom juiz": "Carmim",
+  Delonghi: "Delonghi",
+  ehrmann: "Ehrmann",
+  Maseca: "Gruma",
+  "Mission tortilla": "Gruma",
+  Lacima: "Gruma",
+  "La cima": "Gruma",
+  Delicados: "Gruma",
+  Hochland: "Hochland",
+  Almette: "Hochland",
+  Grunlander: "Hochland",
+  Grünländer: "Hochland",
+  "Cathedral city": "Hochland",
+  SimplyV: "Hochland",
+  "Simply V": "Hochland",
+  Patros: "Hochland",
+  Valbrie: "Hochland",
+  Gervais: "Hochland",
+  Valbon: "Hochland",
+  Fetaxa: "Hochland",
+  Winston: "Japan Tobacco",
+  Mevius: "Japan Tobacco",
+  Camel: "Japan Tobacco",
+  "Benson & Hedges": "Japan Tobacco",
+  "Natural American Spirit": "Japan Tobacco",
+  Sobraine: "Japan Tobacco",
+  "Silk cut": "Japan Tobacco",
+  Ploom: "Japan Tobacco",
+  "Logic vaping": "Japan Tobacco",
+  Tylenol: "Johnson & Johnson",
+  Motrin: "Johnson & Johnson",
+  Zyrtec: "Johnson & Johnson",
+  Benadryl: "Johnson & Johnson",
+  Zarbee: "Johnson & Johnson",
+  Nicorette: "Johnson & Johnson",
+  Calpol: "Johnson & Johnson",
+  Codral: "Johnson & Johnson",
+  "Doktor mom": "Johnson & Johnson",
+  Dolormin: "Johnson & Johnson",
+  Frenadol: "Johnson & Johnson",
+  Imodium: "Johnson & Johnson",
+  ORSL: "Johnson & Johnson",
+  Pepcid: "Johnson & Johnson",
+  Sudafed: "Johnson & Johnson",
+  Visine: "Johnson & Johnson",
+  Neutrogena: "Johnson & Johnson",
+  Aveeno: "Johnson & Johnson",
+  "Dr.Ci:Labo": "Johnson & Johnson",
+  Neostrata: "Johnson & Johnson",
+  Dabao: "Johnson & Johnson",
+  OGX: "Johnson & Johnson",
+  "Le petit marsellais": "Johnson & Johnson",
+  "Bebe young care": "Johnson & Johnson",
+  "Clean & Clear": "Johnson & Johnson",
+  Exuviance: "Johnson & Johnson",
+  "Labo labo": "Johnson & Johnson",
+  Lubriderm: "Johnson & Johnson",
+  "Piz buin": "Johnson & Johnson",
+  Regaine: "Johnson & Johnson",
+  Rogaine: "Johnson & Johnson",
+  Sundown: "Johnson & Johnson",
+  Listerine: "Johnson & Johnson",
+  "Band-Aid": "Johnson & Johnson",
+  "Johnson's": "Johnson & Johnson",
+  "Aveeno baby": "Johnson & Johnson",
+  Carefree: "Johnson & Johnson",
+  Desitin: "Johnson & Johnson",
+  Neosporin: "Johnson & Johnson",
+  "O.B.": "Johnson & Johnson",
+  Penaten: "Johnson & Johnson",
+  Polysporin: "Johnson & Johnson",
+  Stayfree: "Johnson & Johnson",
+  "Red Bull": "Red Bull",
+  RedBull: "Red Bull",
+  "Ritter Sport": "Ritter Sport",
+  Nivea: "Beiersdorf",
+  Eucerin: "Beiersdorf",
+  "La prairie": "Beiersdorf",
+  Coppertone: "Beiersdorf",
+  Labello: "Beiersdorf",
+  Hansaplast: "Beiersdorf",
+  "8x4": "Beiersdorf",
+  Floren: "Beiersdorf",
+  Hidrofugal: "Beiersdorf",
+  Gammon: "Beiersdorf",
+  "Skin stories": "Beiersdorf",
+  Florena: "Beiersdorf",
+  "Stop the water while using me": "Beiersdorf",
+  Chaul: "Beiersdorf",
+  "o.w.n": "Beiersdorf",
+  Chantecaille: "Beiersdorf",
+  Ferrero: "Ferrero",
+  Nutella: "Ferrero",
+  Kinder: "Ferrero",
+  TicTac: "Ferrero",
+  "Tic Tac": "Ferrero",
+  Raffaello: "Ferrero",
+  "Golden Gallery": "Ferrero",
+  "Annie's": "General Mills",
+  "Autumn's Gold": "General Mills",
+  "Betty Crocker": "General Mills",
+  Bisquick: "General Mills",
+  "Blue Buffalo": "General Mills",
+  Boldcultr: "General Mills",
+  Bugles: "General Mills",
+  "Cascadian Farm": "General Mills",
+  Cheerios: "General Mills",
+  "Chex Cereal": "General Mills",
+  "Chex Mix": "General Mills",
+  "Cinnamon Toast Crucnh": "General Mills",
+  "Cocoa Puffs": "General Mills",
+  "cookie Crisp": "General Mills",
+  Doolies: "General Mills",
+  Dunkaroos: "General Mills",
+  "Fiber one": "General Mills",
+  "food should taste good": "General Mills",
+  "Gardetto's": "General Mills",
+  "Golden grahams": "General Mills",
+  "Green Giant": "General Mills",
+  "Haagen-Dazs": "General Mills",
+  "Haagen Dazs": "General Mills",
+  "Häagen-Dazs": "General Mills",
+  "Häagen Dazs": "General Mills",
+  "Jus-rol": "General Mills",
+  larabar: "General Mills",
+  "Latina fresh": "General Mills",
+  "Lucky charms": "General Mills",
+  "Monster cereal": "General Mills",
+  "Muir glen": "General Mills",
+  "Nature Valley": "General Mills",
+  "Old El Paso": "General Mills",
+  Pillsbury: "General Mills",
+  "Pillsbury Atta": "General Mills",
+  Progresso: "General Mills",
+  "Raisin Nut Bran": "General Mills",
+  "Ratio Food": "General Mills",
+  "Reese-s Puffs": "General Mills",
+  "Totino's": "General Mills",
+  Trix: "General Mills",
+  "Wanchai Ferry": "General Mills",
+  Wheaties: "General Mills",
+  Yoki: "General Mills",
+  Yoplait: "General Mills",
+  Herbalife: "Herbalife",
 };
