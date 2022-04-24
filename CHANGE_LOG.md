@@ -11,7 +11,8 @@
   - Finland (K-Market, Alko, Prisma, S-Market, Sale, Alepa, Herkku, Sokos Herkku, Mestarin Herkku)
   - Sweden (City Gross, Coop, ICA, Willys, Hemkop)
   - Spain (Hipercor, El Corte Inglés)
-  - United States (Costco, Walmart, Target, Instacart, Amazon, Google Shopping, Kroger, Whole Foods, Harris Teeter, Safeway, Food Lion, Albertsons, Vons, Jewel-Osco, Acme, Stop & Shop)
+  - United States (Costco, Walmart, Target, Instacart, Amazon, Google Shopping, Kroger, Whole Foods, Harris Teeter, Safeway, Food Lion, Albertsons, Vons, Jewel-Osco, Acme, Stop & Shop, Giant Food Stores, Giant Food, Hannaford)
+  - Ukraine (Мегамаркет, Zakaz, Auchan, Варус, Novus, Pchelka, ЕКО-маркет, Ultramarket, Cosmos, Tavriav, Fozzy, АТБ-Маркет, Сільпо, Наш Край)
 
 - Overlay footer on top of cookies banners
 

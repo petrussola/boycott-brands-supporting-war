@@ -87,7 +87,25 @@
         "https://www.jewelosco.com/*",
         "https://www.acmemarkets.com/*",
         "https://www.shaws.com/*",
-        "https://www.stopandshop.com/*"
+        "https://stopandshop.com/*",
+        "https://giantfoodstores.com/*",
+        "https://giantfood.com/*",
+        "https://www.hannaford.com/*",
+        "https://megamarket.zakaz.ua/*",
+        "https://varus.zakaz.ua/*",
+        "https://novus.zakaz.ua/*",
+        "https://pchelka.zakaz.ua/*",
+        "https://eko.zakaz.ua/*",
+        "https://ultramarket.zakaz.ua/*",
+        "https://auchan.zakaz.ua/*",
+        "https://cosmos.zakaz.ua/*",
+        "https://tavriav.zakaz.ua/*",
+        "https://auchan.ua/*",
+        "https://fozzyshop.ua/*",
+        "https://megamarket.ua/*",
+        "https://zakaz.atbmarket.com/*",
+        "https://shop.silpo.ua/*",
+        "https://shop.nashkraj.ua/*"
       ],
       "run_at": "document_end"
     }
@@ -172,7 +190,25 @@
     "https://www.jewelosco.com/",
     "https://www.acmemarkets.com/",
     "https://www.shaws.com/",
-    "https://www.stopandshop.com/"
+    "https://stopandshop.com/",
+    "https://giantfoodstores.com/",
+    "https://giantfood.com/",
+    "https://www.hannaford.com/",
+    "https://megamarket.zakaz.ua/",
+    "https://varus.zakaz.ua/",
+    "https://novus.zakaz.ua/",
+    "https://pchelka.zakaz.ua/",
+    "https://eko.zakaz.ua/",
+    "https://ultramarket.zakaz.ua/",
+    "https://auchan.zakaz.ua/",
+    "https://cosmos.zakaz.ua/",
+    "https://tavriav.zakaz.ua/",
+    "https://auchan.ua/",
+    "https://fozzyshop.ua/",
+    "https://megamarket.ua/",
+    "https://zakaz.atbmarket.com/",
+    "https://shop.silpo.ua/",
+    "https://shop.nashkraj.ua/"
   ],
   "action": {
     "default_icon": {

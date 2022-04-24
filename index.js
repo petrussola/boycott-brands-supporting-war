@@ -2,6 +2,12 @@ window.addEventListener("load", () => {
   console.log("Dom loaded");
   // get the class names
   const { mainContentClass, productTileClass, tileProp } = getClassNames();
+  // highlight products
+  const listBoycottedCompanies = applyBoycott(productTileClass, tileProp);
+  // action banner
+  listBoycottedCompanies.length > 0
+    ? showFooter(listBoycottedCompanies)
+    : hideFooter();
   // observe the content tag - add children
   observeDomChanges(mainContentClass, productTileClass, tileProp);
 });
@@ -392,11 +398,10 @@ function getClassNames() {
         productTileClass: "product",
         tileProp: "textContent",
       };
-    // IS DOWN NOW
     case "www.walmart.com":
       return {
         mainContentClass: ["body"],
-        productTileClass: "mb1",
+        productTileClass: "w-25",
         tileProp: "textContent",
       };
     case "www.target.com":
@@ -483,12 +488,119 @@ function getClassNames() {
         productTileClass: "card",
         tileProp: "innerText",
       };
-    // NOT WORKING
     case "stopandshop.com":
       return {
-        mainContentClass: ["body"],
+        mainContentClass: ["body", "product-view-search"],
         productTileClass: "product-cell",
         tileProp: "innerText",
+      };
+    case "giantfoodstores.com":
+      return {
+        mainContentClass: ["body", "product-view-search"],
+        productTileClass: "product-cell",
+        tileProp: "innerText",
+      };
+    case "giantfood.com":
+      return {
+        mainContentClass: ["body", "product-view-search"],
+        productTileClass: "product-cell",
+        tileProp: "innerText",
+      };
+    case "www.hannaford.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product-impressions",
+        tileProp: "innerText",
+      };
+    case "megamarket.zakaz.ua":
+      return {
+        mainContentClass: ["body", "search-result"],
+        productTileClass: "ProductsBox__listItem",
+        tileProp: "textContent",
+      };
+    case "varus.zakaz.ua":
+      return {
+        mainContentClass: ["body", "search-result"],
+        productTileClass: "ProductsBox__listItem",
+        tileProp: "textContent",
+      };
+    case "novus.zakaz.ua":
+      return {
+        mainContentClass: ["body", "search-result"],
+        productTileClass: "ProductsBox__listItem",
+        tileProp: "textContent",
+      };
+    case "pchelka.zakaz.ua":
+      return {
+        mainContentClass: ["body", "search-result"],
+        productTileClass: "ProductsBox__listItem",
+        tileProp: "textContent",
+      };
+    case "eko.zakaz.ua":
+      return {
+        mainContentClass: ["body", "search-result"],
+        productTileClass: "ProductsBox__listItem",
+        tileProp: "textContent",
+      };
+    case "ultramarket.zakaz.ua":
+      return {
+        mainContentClass: ["body", "search-result"],
+        productTileClass: "ProductsBox__listItem",
+        tileProp: "textContent",
+      };
+    case "auchan.zakaz.ua":
+      return {
+        mainContentClass: ["body", "search-result"],
+        productTileClass: "ProductsBox__listItem",
+        tileProp: "textContent",
+      };
+    case "cosmos.zakaz.ua":
+      return {
+        mainContentClass: ["body", "search-result"],
+        productTileClass: "ProductsBox__listItem",
+        tileProp: "textContent",
+      };
+    case "tavriav.zakaz.ua":
+      return {
+        mainContentClass: ["body", "search-result"],
+        productTileClass: "ProductsBox__listItem",
+        tileProp: "textContent",
+      };
+    case "auchan.ua":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "item_in_grid__2RO1F",
+        tileProp: "textContent",
+      };
+    case "fozzyshop.ua":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product-miniature",
+        tileProp: "textContent",
+      };
+    case "megamarket.ua":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product",
+        tileProp: "textContent",
+      };
+    case "zakaz.atbmarket.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "catalog-item",
+        tileProp: "textContent",
+      };
+    case "shop.silpo.ua":
+      return {
+        mainContentClass: ["body", "product-list__wrapper"],
+        productTileClass: "product-list-item",
+        tileProp: "textContent",
+      };
+    case "shop.nashkraj.ua":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "image_group",
+        tileProp: "textContent",
       };
     default:
       return {
