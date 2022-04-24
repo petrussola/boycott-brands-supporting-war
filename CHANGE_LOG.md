@@ -15,6 +15,7 @@
   - United States (Costco, Walmart, Target, Instacart, Amazon, Google Shopping, Kroger, Whole Foods, Harris Teeter, Safeway, Food Lion, Albertsons, Vons, Jewel-Osco, Acme, Stop & Shop, Giant Food Stores, Giant Food, Hannaford)
 
 - Overlay footer on top of cookies banners
+- Fix bug with close banner button
 
 ### 1.0.1 - 18/04/2022
 

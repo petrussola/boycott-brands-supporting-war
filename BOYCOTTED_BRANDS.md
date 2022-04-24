@@ -18,7 +18,6 @@ This extension currently targets companies graded D, F and G by [Yale School of 
 - Kimberly-Clark
 - Bonduelle
 - Philips
-- AB InBev
 - Chipita
 - De Cecco
 - Borges

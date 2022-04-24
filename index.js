@@ -676,6 +676,7 @@ function observeDomChanges(contentClassName, productTileClassName, tileProp) {
 function applyBoycott(productTileClassName, tileProp) {
   const boycottedCompanies = [];
   const productTiles = document.getElementsByClassName(productTileClassName);
+  console.log("## These are the products identified by the boycott extension. Useful for debugging purposes. ##")
   Array.from(productTiles).forEach((tile) => {
     const tileText = tile[tileProp].toLowerCase();
     const matchedBrand = isBrandFoundInText(tileText);
@@ -699,6 +700,7 @@ function applyBoycott(productTileClassName, tileProp) {
       );
     }
   });
+  console.log("## End of the list of identified products. ##")
   return boycottedCompanies;
 }
 
