@@ -85,7 +85,7 @@
 - Super Valu
 - Fresh
 
-#### Latva
+#### Latvia
 
 - Barbora.lv
 - Rimi
