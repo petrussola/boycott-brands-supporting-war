@@ -108,12 +108,17 @@
         "https://shop.nashkraj.ua/*",
         "https://www.capraboacasa.com/*",
         "https://compraonline.e-leclerc.es/*",
-        "https://eshop.coop-box.cz/*",
         "https://www.albertdomuzdarma.cz/*",
         "https://www.lidl.cz/*",
         "https://nakup.itesco.cz/*",
         "https://shop.iglobus.cz/*",
-        "https://www.tetadrogerie.cz/*"
+        "https://www.tetadrogerie.cz/*",
+        "https://www.coursesu.com/*",
+        "https://www.carrefour.fr/*",
+        "https://www.intermarche.com/*",
+        "https://www.auchan.fr/*",
+        "https://www.franprix.fr/*",
+        "https://www.monoprix.fr/*"
       ],
       "run_at": "document_end"
     }
@@ -219,12 +224,17 @@
     "https://shop.nashkraj.ua/",
     "https://www.capraboacasa.com/",
     "https://compraonline.e-leclerc.es/",
-    "https://eshop.coop-box.cz/",
     "https://www.albertdomuzdarma.cz/",
     "https://www.lidl.cz/",
     "https://nakup.itesco.cz/",
     "https://shop.iglobus.cz/",
-    "https://www.tetadrogerie.cz/"
+    "https://www.tetadrogerie.cz/",
+    "https://www.coursesu.com/",
+    "https://www.carrefour.fr/",
+    "https://www.intermarche.com/",
+    "https://www.auchan.fr/",
+    "https://www.franprix.fr/",
+    "https://www.monoprix.fr/"
   ],
   "action": {
     "default_icon": {

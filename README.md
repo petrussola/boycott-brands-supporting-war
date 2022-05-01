@@ -55,7 +55,6 @@
 
 ### Czech Republic
 
-- Coop
 - Albert
 - Lidl
 - Tesco
@@ -80,6 +79,15 @@
 - Herkku
 - Sokos Herkku
 - Mestarin Herkku
+
+#### France
+
+- U
+- Carrefour
+- Intermarché
+- Auchan
+- Franprix
+- Monoprix
 
 #### Germany
 
@@ -202,7 +210,6 @@
 - Giant Food Stores
 - Giant Food
 - Hannaford
-
 
 ### Screenshots
 

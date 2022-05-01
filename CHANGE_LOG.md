@@ -2,9 +2,10 @@
 
 - Add online supermarkets and drugstores in:
 
-  - Czech Republic (Coop, Albert, Lidl, Tesco, Globus, Teta Drogerie)
+  - Czech Republic (Albert, Lidl, Tesco, Globus, Teta Drogerie)
+  - France (U, Carrefour, Intermarché, Auchan, Franprix, Monoprix)
 
-- Add additional brands grade F, D or C
+- Add additional brands grade F, D, C
 
 ### 1.1.0 - 23/04/2022
 

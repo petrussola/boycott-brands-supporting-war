@@ -614,12 +614,6 @@ function getClassNames() {
         productTileClass: "productos_producto-tarjetaV2",
         tileProp: "textContent",
       };
-    case "eshop.coop-box.cz":
-      return {
-        mainContentClass: ["body"],
-        productTileClass: "pb-item",
-        tileProp: "textContent",
-      };
     case "www.albertdomuzdarma.cz":
       return {
         mainContentClass: ["body"],
@@ -650,10 +644,46 @@ function getClassNames() {
         productTileClass: "j-item",
         tileProp: "textContent",
       };
-    case "www.dm.cz":
+    case "www.coursesu.com":
       return {
         mainContentClass: ["body"],
-        productTileClass: "yt",
+        productTileClass: "grid-tile",
+        tileProp: "textContent",
+      };
+    case "www.carrefour.fr":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product-grid-item",
+        tileProp: "textContent",
+      };
+    case "www.intermarche.com":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product",
+        tileProp: "textContent",
+      };
+    case "www.auchan.fr":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "list__item",
+        tileProp: "textContent",
+      };
+    case "www.franprix.fr":
+      return {
+        mainContentClass: ["body", "sf-p-cart"],
+        productTileClass: "sf-vpc",
+        tileProp: "textContent",
+      };
+    case "www.monoprix.fr":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "grocery-item",
+        tileProp: "textContent",
+      };
+    case "drive.supermarchesmatch.fr":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "item-container",
         tileProp: "textContent",
       };
     default:
@@ -910,7 +940,7 @@ const brandsOwnersMap = {
   Bonafont: "Danone",
   Evian: "Danone",
   Volvic: "Danone",
-  Salus: "Danone",
+  "Salus ": "Danone",
   Hayat: "Danone",
   Mizone: "Danone",
   "zywiec zdroj": "Danone",
@@ -1026,7 +1056,7 @@ const brandsOwnersMap = {
   "Special K": "Kellogg's",
   SpecialK: "Kellogg's",
   Heinz: "Kraft Heinz",
-  Kraft: "Kraft Heinz",
+  " Kraft": "Kraft Heinz",
   "Oscar Mayer": "Kraft Heinz",
   "Ore-lda": "Kraft Heinz",
   Velveeta: "Kraft Heinz",
@@ -1081,7 +1111,7 @@ const brandsOwnersMap = {
   "Life savers": "Mars",
   "m&m": "Mars",
   maltesers: "Mars",
-  mars: "Mars",
+  "mars ": "Mars",
   "milky way": "Mars",
   Orbit: "Mars",
   Skittles: "Mars",
@@ -1132,7 +1162,7 @@ const brandsOwnersMap = {
   Halls: "Mondelēz International",
   "Honey maid": "Mondelēz International",
   "Kinh Do": "Mondelēz International",
-  Lacta: "Mondelēz International",
+  "Lacta ": "Mondelēz International",
   Marabou: "Mondelēz International",
   Maynards: "Mondelēz International",
   Milka: "Mondelēz International",
@@ -1142,7 +1172,7 @@ const brandsOwnersMap = {
   "Royal Baking Powder": "Mondelēz International",
   "Sour Patch Kids": "Mondelēz International",
   Stride: "Mondelēz International",
-  Tang: "Mondelēz International",
+  "Tang ": "Mondelēz International",
   "Tate's Bake Shop": "Mondelēz International",
   Tiger: "Mondelēz International",
   Toblerone: "Mondelēz International",
@@ -1599,5 +1629,5 @@ const brandsOwnersMap = {
   Yoplait: "General Mills",
   Herbalife: "Herbalife",
   Kotanyi: "Kotanyi",
-  Whirlpool: "Whirlpool"
+  Whirlpool: "Whirlpool",
 };
