@@ -614,6 +614,48 @@ function getClassNames() {
         productTileClass: "productos_producto-tarjetaV2",
         tileProp: "textContent",
       };
+    case "eshop.coop-box.cz":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "pb-item",
+        tileProp: "textContent",
+      };
+    case "www.albertdomuzdarma.cz":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product-item",
+        tileProp: "textContent",
+      };
+    case "www.lidl.cz":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "s-grid__item",
+        tileProp: "textContent",
+      };
+    case "nakup.itesco.cz":
+      return {
+        mainContentClass: ["body", "main__content"],
+        productTileClass: "product-list--list-item",
+        tileProp: "textContent",
+      };
+    case "shop.iglobus.cz":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "product-item",
+        tileProp: "textContent",
+      };
+    case "www.tetadrogerie.cz":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "j-item",
+        tileProp: "textContent",
+      };
+    case "www.dm.cz":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "yt",
+        tileProp: "textContent",
+      };
     default:
       return {
         mainContentClass: "",
@@ -676,7 +718,9 @@ function observeDomChanges(contentClassName, productTileClassName, tileProp) {
 function applyBoycott(productTileClassName, tileProp) {
   const boycottedCompanies = [];
   const productTiles = document.getElementsByClassName(productTileClassName);
-  console.log("## These are the products identified by the boycott extension. Useful for debugging purposes. ##")
+  console.log(
+    "## These are the products identified by the boycott extension. Useful for debugging purposes. ##"
+  );
   Array.from(productTiles).forEach((tile) => {
     const tileText = tile[tileProp].toLowerCase();
     const matchedBrand = isBrandFoundInText(tileText);
@@ -700,7 +744,7 @@ function applyBoycott(productTileClassName, tileProp) {
       );
     }
   });
-  console.log("## End of the list of identified products. ##")
+  console.log("## End of the list of identified products. ##");
   return boycottedCompanies;
 }
 
@@ -1554,4 +1598,6 @@ const brandsOwnersMap = {
   Yoki: "General Mills",
   Yoplait: "General Mills",
   Herbalife: "Herbalife",
+  Kotanyi: "Kotanyi",
+  Whirlpool: "Whirlpool"
 };

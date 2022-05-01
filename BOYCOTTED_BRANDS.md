@@ -41,3 +41,5 @@ This extension currently targets companies graded D, F and G by [Yale School of 
 - Ferrero
 - General Mills
 - Herbalife
+- Kotanyi
+- Whirlpool

@@ -1,3 +1,12 @@
+#### Czech Republic
+
+- Coop
+- Albert
+- Lidl
+- Tesco
+- Globus
+- Teta Drogerie
+
 #### Estonia
 
 - Coop

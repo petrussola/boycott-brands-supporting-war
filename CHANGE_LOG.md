@@ -1,3 +1,11 @@
+### 1.2.0 - 01/05/2022
+
+- Add online supermarkets and drugstores in:
+
+  - Czech Republic (Coop, Albert, Lidl, Tesco, Globus, Teta Drogerie)
+
+- Add additional brands grade F, D or C
+
 ### 1.1.0 - 23/04/2022
 
 - Remove Henkel and AB InBev - they exited RU market

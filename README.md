@@ -3,7 +3,7 @@
 ## Chrome extension - Boycott brands that refuse to exit Russian market
 
 - This extension highlights products and brands owned by the brands in multiple online supermarkets (see below). It blurs the offending items and shows a warning message so you can boycott them (see screenshots below).
-- By refusing to leave the Russian market, these brands are implicitely supporting the war in Ukraine.
+- By refusing to leave the Russian market and continuing to pay their taxes there these brands are implicitely supporting the war in Ukraine.
 
 ### Brands refusing to leave the Russian market (see [Grades C ("Scaling Back"), D ("Buying Time") and F ("Digging In") in Yale's tracking document](https://som.yale.edu/story/2022/over-400-companies-have-withdrawn-russia-some-remain))
 
@@ -48,8 +48,19 @@
 - Ferrero
 - General Mills
 - Herbalife
+- Kotanyi
+- Whirlpool
 
-### Supermarkets currently targeted
+### Supermarkets currently supported
+
+### Czech Republic
+
+- Coop
+- Albert
+- Lidl
+- Tesco
+- Globus
+- Teta Drogerie
 
 #### Estonia
 
