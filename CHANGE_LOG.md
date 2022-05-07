@@ -1,3 +1,12 @@
+### 1.2.0 - 01/05/2022
+
+- Add online supermarkets and drugstores in:
+
+  - Czech Republic (Albert, Lidl, Tesco, Globus, Teta Drogerie)
+  - France (U, Carrefour, Intermarché, Auchan, Franprix, Monoprix)
+
+- Add additional brands grade F, D, C
+
 ### 1.1.0 - 23/04/2022
 
 - Remove Henkel and AB InBev - they exited RU market

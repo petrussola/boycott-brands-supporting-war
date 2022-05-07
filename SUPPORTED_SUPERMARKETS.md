@@ -1,3 +1,11 @@
+#### Czech Republic
+
+- Albert
+- Lidl
+- Tesco
+- Globus
+- Teta Drogerie
+
 #### Estonia
 
 - Coop
@@ -16,6 +24,15 @@
 - Herkku
 - Sokos Herkku
 - Mestarin Herkku
+
+#### France
+
+- U
+- Carrefour
+- Intermarché
+- Auchan
+- Franprix
+- Monoprix
 
 #### Germany
 
