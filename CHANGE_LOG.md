@@ -1,3 +1,7 @@
+### 1.2.1 - 10/05/2022
+
+- Fix parsing bugs
+
 ### 1.2.0 - 01/05/2022
 
 - Add online supermarkets and drugstores in:
