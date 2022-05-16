@@ -50,6 +50,8 @@
 - Herbalife
 - Kotanyi
 - Whirlpool
+- Groupe Savencia
+- Coca-Cola
 
 ### Supermarkets currently supported
 

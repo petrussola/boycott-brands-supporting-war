@@ -43,3 +43,5 @@ This extension currently targets companies graded D, F and G by [Yale School of 
 - Herbalife
 - Kotanyi
 - Whirlpool
+- Groupe Savencia
+- Coca-Cola
