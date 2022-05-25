@@ -865,7 +865,6 @@ const brandsOwnersMap = {
   "Nescafé Dolce Gusto": "Nestlé",
   "Nescafe Dolce Gusto": "Nestlé",
   Nespresso: "Nestlé",
-  Starbucks: "Nestlé",
   Buitoni: "Nestlé",
   Herta: "Nestlé",
   "Hot Pockets": "Nestlé",
