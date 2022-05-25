@@ -1,6 +1,10 @@
+### 1.2.2 - 16/05/2022
+
+- Add additional brands grade F, D, C
+
 ### 1.2.1 - 10/05/2022
 
-- Fix parsing bugs
+- Fix parsing bugs. More feedback welcome!
 
 ### 1.2.0 - 01/05/2022
 
