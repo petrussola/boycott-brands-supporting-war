@@ -1,3 +1,8 @@
+### 1.3.0 - 27/05/2022
+
+- Add Ukrainian online shops Prom, Rozetka, e-katalog (ek.ua) and magazilla (m.ua)
+- Fix parsing keyword bugs
+
 ### 1.2.3 - 25/05/2022
 
 - Remove Starbucks - it exited RU market

@@ -1,6 +1,6 @@
 {
   "name": "Boycott brands refusing to exit Russia",
-  "version": "1.2.3",
+  "version": "1.3.0",
   "manifest_version": 3,
   "description": "You can now easily identify brands refusing to exit the Russian market and boycott their products",
   "content_scripts": [
@@ -118,7 +118,11 @@
         "https://www.intermarche.com/*",
         "https://www.auchan.fr/*",
         "https://www.franprix.fr/*",
-        "https://www.monoprix.fr/*"
+        "https://www.monoprix.fr/*",
+        "https://prom.ua/*",
+        "https://rozetka.com.ua/*",
+        "https://ek.ua/*",
+        "https://m.ua/*"
       ],
       "run_at": "document_end"
     }
@@ -234,7 +238,11 @@
     "https://www.intermarche.com/",
     "https://www.auchan.fr/",
     "https://www.franprix.fr/",
-    "https://www.monoprix.fr/"
+    "https://www.monoprix.fr/",
+    "https://prom.ua/",
+    "https://rozetka.com.ua/",
+    "https://ek.ua/",
+    "https://m.ua/"
   ],
   "action": {
     "default_icon": {
