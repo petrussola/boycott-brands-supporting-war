@@ -1,3 +1,7 @@
+### 1.2.3 - 25/05/2022
+
+- Remove Starbucks - it exited RU market
+
 ### 1.2.2 - 16/05/2022
 
 - Add additional brands grade F, D, C
