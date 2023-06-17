@@ -8,7 +8,6 @@
 ### Brands refusing to leave the Russian market (see [Grades C ("Scaling Back"), D ("Buying Time") and F ("Digging In") in Yale's tracking document](https://som.yale.edu/story/2022/over-400-companies-have-withdrawn-russia-some-remain))
 
 - Nestlé
-- Danone
 - Bacardi
 - Pepsico
 - Bayer
@@ -55,7 +54,7 @@
 
 ### Supermarkets currently supported
 
-### Czech Republic
+#### Czech Republic
 
 - Albert
 - Lidl

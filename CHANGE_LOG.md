@@ -1,3 +1,8 @@
+### 1.3.1 - 17/06/2023
+
+- Fix bugs
+- Remove Danone - anounced transfer of assets according to Yale tracker
+
 ### 1.3.0 - 27/05/2022
 
 - Add Ukrainian online shops Prom, Rozetka, e-katalog (ek.ua) and magazilla (m.ua)
