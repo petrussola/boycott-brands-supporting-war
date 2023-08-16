@@ -148,10 +148,22 @@ function getClassNames() {
         productTileClass: "browsingitem",
         tileProp: "textContent",
       };
+    case "www.alza.cz":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "browsingitem",
+        tileProp: "textContent",
+      };
     case "www.mall.sk":
       return {
         mainContentClass: ["body"],
-        productTileClass: "category-products__item",
+        productTileClass: "pbcr",
+        tileProp: "textContent",
+      };
+    case "www.mall.cz":
+      return {
+        mainContentClass: ["body"],
+        productTileClass: "pbcr",
         tileProp: "textContent",
       };
     case "potravinydomov.itesco.sk":
