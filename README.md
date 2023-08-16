@@ -61,6 +61,8 @@
 - Tesco
 - Globus
 - Teta Drogerie
+- Alza
+- Mall
 
 #### Estonia
 
