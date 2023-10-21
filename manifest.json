@@ -5,8 +5,8 @@
   "description": "Boycott brands supporting Israeli apartheid",
   "content_scripts": [
     {
-      "js": ["index.js"],
-      "css": ["styles.css"],
+      "js": ["src/index.js", "src/websites.js", "src/blockList.js"],
+      "css": ["src/styles.css"],
       "matches": [
         "https://www.tesco.ie/*",
         "https://www.tesco.com/*",

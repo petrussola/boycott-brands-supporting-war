@@ -1,0 +1,20 @@
+{
+  "name": "palestine-pal",
+  "version": "1.0.0",
+  "description": "Boycott brands supporting Israeli apartheid",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/musahmad/boycott-brands-supporting-apartheid.git"
+  },
+  "author": "Deen Developers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/musahmad/boycott-brands-supporting-apartheid/issues"
+  },
+  "homepage": "https://github.com/musahmad/boycott-brands-supporting-apartheid#readme",
+  "type": "commonjs"
+}
