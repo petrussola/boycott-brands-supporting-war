@@ -808,7 +808,7 @@ function isBrandFoundInText(text) {
   // iterate over brand and return boolean depending
   // on whether brand has been found in text or not
   const matchedBrand = brands.find((brand) =>
-    text.includes(brand.toLowerCase())
+    text.search(new RegExp(brand, 'gi')) > -1
   );
   return matchedBrand;
 }
