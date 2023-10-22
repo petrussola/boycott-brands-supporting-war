@@ -848,6 +848,6 @@ const subbrands = {
     "Schweppes",
     "Sprite",
     "Topo Chico",
-    "Glaceau Vitamin Water",
+    "Glaceau",
   ],
 };
