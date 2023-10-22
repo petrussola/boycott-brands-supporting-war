@@ -1,14 +1,19 @@
-
 window.addEventListener("load", () => {
   console.log("Dom loaded");
   // get the class names
   const { mainContentClass, productTileClass, tileProp } = getClassNames();
   // highlight products
-  const listBoycottedCompanies = applyBoycott(productTileClass, tileProp);
+  const matchedProducts = applyBoycott(productTileClass, tileProp);
+
+  const listBoycottedCompanies = Object.keys(
+    matchedProducts
+      .map((product) => findBrand(product)[0])
+      .reduce((acc, curr) => ((acc[curr] = ""), acc), {})
+  );
+  console.info("<><><>", listBoycottedCompanies);
+
   // action banner
-  listBoycottedCompanies.length > 0
-    ? showFooter(listBoycottedCompanies)
-    : hideFooter();
+  matchedProducts.length > 0 ? showFooter(matchedProducts) : hideFooter();
   // observe the content tag - add children
   observeDomChanges(mainContentClass, productTileClass, tileProp);
 });
@@ -64,21 +69,21 @@ function observeDomChanges(contentClassName, productTileClassName, tileProp) {
 }
 
 function applyBoycott(productTileClassName, tileProp) {
-  const matchingProducts = {};
+  const matchedProducts = {};
   const productTiles = document.getElementsByClassName(productTileClassName);
   console.log(
     "## These are the products identified by the boycott extension. Useful for debugging purposes. ##"
   );
   Array.from(productTiles).forEach((tile) => {
-    const tileText = removeAccents(tile[tileProp].toLowerCase());
+    const tileText = removeAccents(tile[tileProp]);
     const matchedProduct = isBrandFoundInText(tileText);
     if (matchedProduct) {
       applyBlur(tile);
-      matchingProducts[matchedProduct] = 1;
+      matchedProducts[matchedProduct] = 1;
     }
   });
   console.log("## End of the list of identified products. ##");
-  return Object.keys(matchingProducts);
+  return Object.keys(matchedProducts);
 }
 
 function isBrandFoundInText(text) {
@@ -115,7 +120,7 @@ function showFooter(listCompanies) {
   const text = document.createElement("div");
   const close = document.createElement("div");
   flag.innerText = "🇵🇸";
-  flag.style.fontSize = "30px"
+  flag.style.fontSize = "30px";
   flag.ariaRoleDescription = "Palestinian Flag";
   flag.ariaLabel = "Palestinian Flag";
   flag.role = "img";
@@ -147,4 +152,10 @@ function removeAccents(text) {
     .replace(/[Ô]/gi, "o")
     .replace(/[Ù]/gi, "u")
     .replace(/[Ç]/gi, "c");
+}
+
+function findBrand(product) {
+  return Object.entries(subbrands).find(([brand, products]) =>
+    products.includes(product)
+  );
 }

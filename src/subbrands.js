@@ -198,7 +198,7 @@ const subbrands = {
   ],
   "Kraft Heinz": [
     "Heinz",
-    " Kraft",
+    "Kraft",
     "Oscar Mayer",
     "Ore-lda",
     "Velveeta",
