@@ -1,56 +1,28 @@
-[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://vshymanskyy.github.io/StandWithUkraine)
+## Chrome extension - Boycott brands that support apartheid
 
-## Chrome extension - Boycott brands that refuse to exit Russian market
+- This extension highlights products and brands owned by the brands in multiple online supermarkets (see below). It blurs the offending items and shows a warning message so you can boycott them.
 
-- This extension highlights products and brands owned by the brands in multiple online supermarkets (see below). It blurs the offending items and shows a warning message so you can boycott them (see screenshots below).
-- By refusing to leave the Russian market and continuing to pay their taxes there these brands are implicitely supporting the war in Ukraine.
 
-### Brands refusing to leave the Russian market (see [Grades C ("Scaling Back"), D ("Buying Time") and F ("Digging In") in Yale's tracking document](https://som.yale.edu/story/2022/over-400-companies-have-withdrawn-russia-some-remain))
+### Brands which support apartheid
 
-- Nestlé
-- Bacardi
-- Pepsico
-- Bayer
-- Colgate-Palmolive
-- Kellogg's
-- Kraft Heinz
-- Mars
-- Mondelēz International
-- Philip Morris
-- Procter & Gamble
-- Unilever
-- Barilla
-- SC Johnson
-- Kimberly-Clark
-- Bonduelle
-- Philips
-- Chipita
-- De Cecco
-- Borges
-- Grupo Fuertes
-- JDE Peet's
-- Lactalis
-- Storck
-- Zwack
-- Anecoop
-- Campari
-- Carmim
-- Delonghi
-- Ehrmann
-- Gruma
-- Hochland
-- Japan Tobacco
-- Johnson & Johnson
-- Red Bull
-- Ritter Sport
-- Beiersdorf
-- Ferrero
-- General Mills
-- Herbalife
-- Kotanyi
-- Whirlpool
-- Groupe Savencia
-- Coca-Cola
+| Brand Name/Product | Reason                                                                                                                                                                                                                                                                           |                      Tag                     |   |   |
+|:------------------:|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------:|---|---|
+|        Ahava       | Ahava cosmetics has its production site in an illegal Israeli settlement                                                                                                                                                                                                         | Illegal settlement                           |   |   |
+|         HP         | HP (Hewlett Packard) helps Israel restrict Palestinian movement by providing a biometric ID system                                                                                                                                                                               | Infrastructure support                       |   |   |
+|        Keter       | Keter is an Israeli manufacturer and marketer of resin-based household and garden consumer products                                                                                                                                                                              | Israeli presence                             |   |   |
+|       Strauss      | Strauss is an Israeli manufacturer and marketer of consumer foods sold through retail stores                                                                                                                                                                                     | Israeli presence                             |   |   |
+|       Danone       | Danone is a French multinational food-products corporation that holds 20% shares of Israel’s Strauss Group food company                                                                                                                                                          | Financial support                            |   |   |
+|       Tivall       | Tivall is a food company in Israel which supplies meat substitute products, including Tivall veggie grilled fillet, veggie burger, corn schnitzel, chick’n cutlets, veggie chick’n nuggets, and vegan corn bites                                                                 | Israeli presence                             |   |   |
+|       Nestle       | Nestlé is a Swiss multinational food and drink company that owns 53.8% of the leading Israeli food manufacturer Osem                                                                                                                                                             | Infrastructure support  \| Financial support |   |   |
+|      Coca Cola     | Coca-Cola is an American multinational corporation. Coca-Cola Israel owns dairy farms in illegal Israeli settlements                                                                                                                                                             | Financial support                            |   |   |
+|     Eden Spring    | Eden Springs Ltd is an Israeli bottled mineral water marketing company that takes water from the Salukia spring in the illegally occupied Syrian Golan Heights                                                                                                                   | Israeli presence                             |   |   |
+|     SodaStream     | SodaStream International Ltd is an Israel-based manufacturing company with a history of mistreatment of and discrimination against Palestinian workers                                                                                                                           | Israeli presence                             |   |   |
+|      Starbucks     | Starbucks is an American multinational chain of coffeehouses. Starbucks has opened outlets in US bases in Afghanistan and Iraq and at the illegal torture center in Guantanamo Bay. Starbucks also sponsors fundraisers for Israel                                               | Public support                               |   |   |
+|     McDonald’s     | McDonald’s Corporation is an American multinational fast-food chain. Its products include hamburgers, chicken, french fries, soft drinks, shakes, salads, desserts, hotcakes, coffee, breakfast, and wraps. McDonald’s offers free meals to hospitals and Israeli defense forces | Public support \| Financial support          |   |   |
+|       Siemens      | Siemens is the largest industrial manufacturing company in Europe for buildings and distributed energy systems, and it will link Israel’s electricity grid with Europe                                                                                                           | Infrastructure support                       |   |   |
+|         AXA        | AXA is a French multinational insurance company that invests in Israeli banks                                                                                                                                                                                                    | Financial support                            |   |   |
+|        Puma        | Puma SE is a German multinational corporation that manufactures athletic and casual footwear, apparel, and accessories. Puma sponsors the Israel Football Association                                                                                                            | Financial support                            |   |   |
+|        Sabra       | Sabra Dipping Company is a joint venture that produces food products. Sabra is co-owned by PepsiCo and the Strauss Group, which provides financial support to the Israeli army                                                                                                   | Financial support                            |   |   |
 
 ### Supermarkets currently supported
 
@@ -218,6 +190,4 @@
 
 ### Screenshots
 
-![Screenshot 2022-03-18 at 23 08 20](https://user-images.githubusercontent.com/49898713/159095686-7a72a1d7-347c-42bb-8613-ec8f9bfc1c93.png)
-
-![Screenshot 2022-03-18 at 23 07 34](https://user-images.githubusercontent.com/49898713/159095700-ff74b706-5d46-4e26-9880-00d6fcc7f711.png)
+<img width="1189" alt="image" src="https://github.com/musahmad/boycott-brands-supporting-apartheid/assets/6170289/5d36fadd-8058-4b37-8d1d-24820e38059c">
