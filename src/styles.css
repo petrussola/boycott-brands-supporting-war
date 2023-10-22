@@ -1,6 +1,5 @@
 .blurred {
-  filter: blur(8px);
-  cursor: not-allowed;
+  filter: blur(2px);
 }
 
 .ukraine-footer {

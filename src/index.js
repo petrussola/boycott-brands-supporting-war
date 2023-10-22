@@ -132,6 +132,7 @@ function showFooter(listCompanies) {
   const text = document.createElement("div");
   const close = document.createElement("div");
   flag.innerText = "🇵🇸";
+  flag.style.fontSize = "30px"
   flag.ariaRoleDescription = "Palestinian Flag";
   flag.ariaLabel = "Palestinian Flag";
   flag.role = "img";
