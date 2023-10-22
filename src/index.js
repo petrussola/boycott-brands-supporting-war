@@ -63,58 +63,41 @@ function observeDomChanges(contentClassName, productTileClassName, tileProp) {
 }
 
 function applyBoycott(productTileClassName, tileProp) {
-  const boycottedCompanies = [];
+  const matchingProducts = {};
   const productTiles = document.getElementsByClassName(productTileClassName);
   console.log(
     "## These are the products identified by the boycott extension. Useful for debugging purposes. ##"
   );
   Array.from(productTiles).forEach((tile) => {
-    const tileText = tile[tileProp].toLowerCase();
-    const matchedBrand = isBrandFoundInText(tileText);
-    if (matchedBrand) {
-      const index = tileText.indexOf(matchedBrand.toLowerCase());
-      const contextText = tileText.slice(
-        index === 0 ? index : index - 20,
-        index + matchedBrand.length + 20
-      );
-      console.log(
-        matchedBrand,
-        " < ",
-        contextText,
-        " < ",
-        brandsOwnersMap[matchedBrand]
-      );
+    const tileText = removeAccents(tile[tileProp].toLowerCase());
+    const matchedProduct = isBrandFoundInText(tileText);
+    if (matchedProduct) {
       applyBlur(tile);
-      addCompanyToBoycottedList(
-        brandsOwnersMap[matchedBrand],
-        boycottedCompanies
-      );
+      matchingProducts[matchedProduct] = 1;
     }
   });
   console.log("## End of the list of identified products. ##");
-  return boycottedCompanies;
+  return Object.keys(matchingProducts);
 }
 
 function isBrandFoundInText(text) {
   // get array from brands
-  const brands = Object.keys(brandsOwnersMap);
+  const brands = brandReasons.map((brandReason) => brandReason.name);
+
+  // expand search to include subbrands
+  const brandProducts = brands.flatMap((brand) => subbrands[brand] || brand);
+
   // iterate over brand and return boolean depending
   // on whether brand has been found in text or not
-  const matchedBrand = brands.find((brand) =>
-    text.search(new RegExp(brand, 'gi')) > -1
+  const matchedProduct = brandProducts.find(
+    (brand) => text.search(new RegExp(brand, "gi")) > -1
   );
-  return matchedBrand;
+
+  return matchedProduct;
 }
 
 function applyBlur(node) {
   node.classList.add("blurred");
-}
-
-function addCompanyToBoycottedList(name, list) {
-  if (list.indexOf(name) === -1) {
-    list.push(name);
-  }
-  return;
 }
 
 function showFooter(listCompanies) {
@@ -152,4 +135,14 @@ function hideFooter() {
   Array.from(footerCollection).forEach((footer) => {
     footer.remove();
   });
+}
+
+function removeAccents(text) {
+  return text
+    .replace(/[ÀÁÂÃÄÅ]/gi, "a")
+    .replace(/[ÈÉÊË]/gi, "e")
+    .replace(/[Î]/gi, "i")
+    .replace(/[Ô]/gi, "o")
+    .replace(/[Ù]/gi, "u")
+    .replace(/[Ç]/gi, "c");
 }
