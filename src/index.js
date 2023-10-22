@@ -1,3 +1,4 @@
+
 window.addEventListener("load", () => {
   console.log("Dom loaded");
   // get the class names
@@ -130,13 +131,13 @@ function showFooter(listCompanies) {
   const flag = document.createElement("div");
   const text = document.createElement("div");
   const close = document.createElement("div");
-  flag.innerText = "🇺🇦";
-  flag.ariaRoleDescription = "Ukrainian Flag";
-  flag.ariaLabel = "Ukrainian Flag";
+  flag.innerText = "🇵🇸";
+  flag.ariaRoleDescription = "Palestinian Flag";
+  flag.ariaLabel = "Palestinian Flag";
   flag.role = "img";
-  text.innerHTML = `By refusing to exit the Russian market, ${formattedListCompanies} ${
+  text.innerHTML = `By supporting Israel, ${formattedListCompanies} ${
     listCompanies.length > 1 ? "are" : "is"
-  } supporting the war in Ukraine. Their products have been blurred. Please choose something else. <a href="https://github.com/petrussola/boycott-brands-supporting-war/blob/main/README.md" target="_blank" rel="noopener noreferrer">Read more</a>`;
+  } supporting the the apartheid of the Palestinians. Their products have been blurred. Please choose something else.`;
   close.classList.add("close-button");
   close.innerText = "Close";
   close.addEventListener("click", hideFooter);
