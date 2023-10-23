@@ -105,15 +105,16 @@ function showFooter(listCompanies) {
       : listCompanies[0];
 
   const footer = document.createElement("div");
-  const flag = document.createElement("div");
   const text = document.createElement("div");
   const close = document.createElement("div");
   
-  flag.innerText = "🇵🇸";
-  flag.style.fontSize = "30px";
-  flag.ariaRoleDescription = "Palestinian Flag";
-  flag.ariaLabel = "Palestinian Flag";
+  const flag = document.createElement("div");
+  const img = document.createElement("img")
+  img.src = chrome.runtime.getURL("./logo.png")
+  img.width = 80;
+  flag.appendChild(img)
   flag.role = "img";
+
   text.innerHTML = `By supporting Israel, ${formattedListCompanies} ${
     listCompanies.length > 1 ? "are" : "is"
   } supporting the the apartheid of the Palestinians. Their products have been blurred.`;
