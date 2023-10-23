@@ -3,17 +3,9 @@ window.addEventListener("load", () => {
   // get the class names
   const { mainContentClass, productTileClass, tileProp } = getClassNames();
   // highlight products
-  const matchedProducts = applyBoycott(productTileClass, tileProp);
-
-  const listBoycottedCompanies = Object.keys(
-    matchedProducts
-      .map((product) => findBrand(product)[0])
-      .reduce((acc, curr) => ((acc[curr] = ""), acc), {})
-  );
-  console.info("<><><>", listBoycottedCompanies);
-
+  const matchedCompanies = applyBoycott(productTileClass, tileProp);
   // action banner
-  matchedProducts.length > 0 ? showFooter(matchedProducts) : hideFooter();
+  matchedCompanies.length > 0 ? showFooter(matchedCompanies) : hideFooter();
   // observe the content tag - add children
   observeDomChanges(mainContentClass, productTileClass, tileProp);
 });
@@ -39,7 +31,7 @@ function observeDomChanges(contentClassName, productTileClassName, tileProp) {
       if (
         mutation.type === "childList" &&
         (!mutation.previousSibling ||
-          mutation.previousSibling.className !== "ukraine-footer")
+          mutation.previousSibling.className !== "palestine-footer")
       ) {
         // iterate over closures and check if
         // there is one that returns true
@@ -52,7 +44,7 @@ function observeDomChanges(contentClassName, productTileClassName, tileProp) {
               productTileClassName,
               tileProp
             );
-            if (mutation.removedNodes[0]?.className === "ukraine-footer") {
+            if (mutation.removedNodes[0]?.className === "palestine-footer") {
               return;
             }
             // action banner
@@ -69,37 +61,33 @@ function observeDomChanges(contentClassName, productTileClassName, tileProp) {
 }
 
 function applyBoycott(productTileClassName, tileProp) {
-  const matchedProducts = {};
+  const matchedBrands = new Set();
   const productTiles = document.getElementsByClassName(productTileClassName);
-  console.log(
-    "## These are the products identified by the boycott extension. Useful for debugging purposes. ##"
-  );
+
   Array.from(productTiles).forEach((tile) => {
     const tileText = removeAccents(tile[tileProp]);
-    const matchedProduct = isBrandFoundInText(tileText);
-    if (matchedProduct) {
+    const matchedBrand = isBrandFoundInText(tileText);
+    if (matchedBrand) {
       applyBlur(tile);
-      matchedProducts[matchedProduct] = 1;
+      matchedBrands.add(matchedBrand);
     }
   });
-  console.log("## End of the list of identified products. ##");
-  return Object.keys(matchedProducts);
+  return [...new Set([...matchedBrands].map((brand) => findCompany(brand)))];
 }
 
 function isBrandFoundInText(text) {
-  // get array from brands
-  const brands = brandReasons.map((brandReason) => brandReason.name);
-
-  // expand search to include subbrands
-  const brandProducts = brands.flatMap((brand) => subbrands[brand] || brand);
+  const companyNames = companies.map((company) => company.name);
+  const companyBrands = companyNames.flatMap((company) => brands[company] || company);
+  // try and limit search to title by splitting on price or weight
+  const textToSearch = text.split(/[$£€]|(\d+[gG])/i)[0];
 
   // iterate over brand and return boolean depending
   // on whether brand has been found in text or not
-  const matchedProduct = brandProducts.find(
-    (brand) => text.search(new RegExp(brand, "gi")) > -1
+  const matchedBrand = companyBrands.find(
+    (brand) => textToSearch.search(new RegExp(brand, "gi")) > -1
   );
 
-  return matchedProduct;
+  return matchedBrand;
 }
 
 function applyBlur(node) {
@@ -119,6 +107,9 @@ function showFooter(listCompanies) {
   const flag = document.createElement("div");
   const text = document.createElement("div");
   const close = document.createElement("div");
+  const matchedDescriptions = 
+
+  
   flag.innerText = "🇵🇸";
   flag.style.fontSize = "30px";
   flag.ariaRoleDescription = "Palestinian Flag";
@@ -126,19 +117,19 @@ function showFooter(listCompanies) {
   flag.role = "img";
   text.innerHTML = `By supporting Israel, ${formattedListCompanies} ${
     listCompanies.length > 1 ? "are" : "is"
-  } supporting the the apartheid of the Palestinians. Their products have been blurred. Please choose something else.`;
+  } supporting the the apartheid of the Palestinians. Their products have been blurred.`;
   close.classList.add("close-button");
   close.innerText = "Close";
   close.addEventListener("click", hideFooter);
   footer.appendChild(flag);
   footer.appendChild(text);
   footer.appendChild(close);
-  footer.classList.add("ukraine-footer");
+  footer.classList.add("palestine-footer");
   document.body.appendChild(footer);
 }
 
 function hideFooter() {
-  const footerCollection = document.getElementsByClassName("ukraine-footer");
+  const footerCollection = document.getElementsByClassName("palestine-footer");
   Array.from(footerCollection).forEach((footer) => {
     footer.remove();
   });
@@ -154,8 +145,15 @@ function removeAccents(text) {
     .replace(/[Ç]/gi, "c");
 }
 
-function findBrand(product) {
-  return Object.entries(subbrands).find(([brand, products]) =>
-    products.includes(product)
-  );
+function findCompany(brand) {
+    const matchedEntry = Object.entries(brands).find(([company, brands]) =>
+      brands.includes(brand)
+    );
+    return matchedEntry ? matchedEntry[0] : brand
+  }
+
+function getDescriptions(listCompanies){
+  return companies
+    .filter(company => listCompanies.includes(company.name))
+    .map(company => company.description).join("");
 }

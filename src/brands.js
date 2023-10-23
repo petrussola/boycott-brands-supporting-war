@@ -1,5 +1,5 @@
-const subbrands = {
-  Nestlé: [
+const brands = {
+  Nestle: [
     "Nestle",
     "Nestlé",
     "Cerelac",
