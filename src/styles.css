@@ -2,7 +2,7 @@
   filter: blur(2px);
 }
 
-.ukraine-footer {
+.palestine-footer {
   max-width: 700px;
   min-height: 40px;
   background-color: white;
@@ -25,11 +25,11 @@
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-.ukraine-footer > div {
+.palestine-footer > div {
   padding: 0 1rem;
 }
 
-.ukraine-footer a {
+.palestine-footer a {
   color: #64b5f6 !important;
   text-decoration: underline;
 }

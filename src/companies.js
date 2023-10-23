@@ -6,7 +6,7 @@ const reasonsForBoycott = {
   PUBLIC_SUPPORT: "PUBLIC_SUPPORT",
 };
 
-const brandReasons = [
+const companies = [
   {
     name: "Ahava",
     reasons: [reasonsForBoycott.ILLEGAL_SETTLEMENT_ACTIVITY],
