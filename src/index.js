@@ -63,10 +63,13 @@ function observeDomChanges(contentClassName, productTileClassName, tileProp) {
 function applyBoycott(productTileClassName, tileProp) {
   const matchedBrands = new Set();
   const productTiles = document.getElementsByClassName(productTileClassName);
+  const boycottedBrands = companies
+          .map((company) => company.name)
+          .flatMap((company) => brands[company] || company);
 
   Array.from(productTiles).forEach((tile) => {
     const tileText = removeAccents(tile[tileProp]);
-    const matchedBrand = isBrandFoundInText(tileText);
+    const matchedBrand = isBrandFoundInText(boycottedBrands, tileText);
     if (matchedBrand) {
       applyBlur(tile);
       matchedBrands.add(matchedBrand);
@@ -75,15 +78,13 @@ function applyBoycott(productTileClassName, tileProp) {
   return [...new Set([...matchedBrands].map((brand) => findCompany(brand)))];
 }
 
-function isBrandFoundInText(text) {
-  const companyNames = companies.map((company) => company.name);
-  const companyBrands = companyNames.flatMap((company) => brands[company] || company);
+function isBrandFoundInText(brands, text) {
   // try and limit search to title by splitting on price or weight
   const textToSearch = text.split(/[$£€]|(\d+[gG])/i)[0];
 
   // iterate over brand and return boolean depending
   // on whether brand has been found in text or not
-  const matchedBrand = companyBrands.find(
+  const matchedBrand = brands.find(
     (brand) => textToSearch.search(new RegExp(brand, "gi")) > -1
   );
 
@@ -107,8 +108,6 @@ function showFooter(listCompanies) {
   const flag = document.createElement("div");
   const text = document.createElement("div");
   const close = document.createElement("div");
-  const matchedDescriptions = 
-
   
   flag.innerText = "🇵🇸";
   flag.style.fontSize = "30px";
