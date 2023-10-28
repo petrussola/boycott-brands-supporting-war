@@ -47,7 +47,6 @@ const brands = {
     "Nescafe",
     "Sjora",
     "Stouffer's",
-    "Boost",
     "Nutren Junior",
     "Peptamen",
     "Resource",
