@@ -330,8 +330,8 @@ function getClassNames() {
       };
     case "www.s-kaupat.fi":
       return {
-        mainContentClass: ["body", "sc-1z3de1-1"],
-        productTileClass: ".sc-1ts9eyk-3",
+        mainContentClass: ["body"],
+        productTileClass: "article",
         tileProp: "textContent",
       };
     case "www.foodie.fi":
@@ -370,14 +370,14 @@ function getClassNames() {
       };
     case "www.willys.se":
       return {
-        mainContentClass: ["Gridstyles__StyledGrid-sc-p13gvi-0"],
-        productTileClass: ".Productstyles__StyledProduct-sc-16nua0l-0",
+        mainContentClass: ["body"],
+        productTileClass: "[data-testid='product']",
         tileProp: "textContent",
       };
     case "www.hemkop.se":
       return {
-        mainContentClass: ["body", "ax-layout-content"],
-        productTileClass: ".ax-product-grid-tile",
+        mainContentClass: ["body"],
+        productTileClass: "[data-testid='product-container']",
         tileProp: "textContent",
       };
     case "www.hipercor.es":
@@ -412,8 +412,8 @@ function getClassNames() {
       };
     case "www.instacart.com":
       return {
-        mainContentClass: ["body", "css-hshm0p"],
-        productTileClass: ".css-er4k5d",
+        mainContentClass: ["body"],
+        productTileClass: "a:has([data-testid='item-card-image'])",
         tileProp: "textContent",
       };
     case "www.amazon.com":
@@ -772,6 +772,11 @@ function observeDomChanges(contentClassName, productTileClassName, tileProp) {
 function applyBoycott(productTileClassName, tileProp) {
   const boycottedCompanies = [];
   const productTiles = document.querySelectorAll(productTileClassName);
+  if (productTiles.length === 0 && productTileClassName) {
+    console.warn(
+      `[Boycott Extension] No product tiles found with selector "${productTileClassName}" on ${window.location.hostname}. The site may have changed its HTML structure.`
+    );
+  }
   console.log(
     "## These are the products identified by the boycott extension. Useful for debugging purposes. ##"
   );
