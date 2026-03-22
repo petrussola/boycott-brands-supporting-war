@@ -1,3 +1,14 @@
+### 1.4.0 - 22/03/2026
+
+- Remove Zwack from boycotted brands - fully withdrew from Russia per Yale tracker
+- Remove host_permissions from manifest (unnecessary, reduces install warning)
+- Migrate from getElementsByClassName to querySelectorAll for more flexible selectors
+- Update selectors for sites that changed their HTML: Tesco IE/UK, Ocado, Asda, Morrisons, Waitrose, Walmart, Target, Rewe, Carrefour FR, DIA, S-kaupat, Willys, Hemkop, Instacart, Google Shopping, SuperValu, Dunnes, Bonpreu/Esclat, Iceland UK
+- Update domains: Asda (groceries.asda.com -> www.asda.com), Aldi UK (groceries.aldi.co.uk -> www.aldi.co.uk), Alcampo (www.alcampo.es -> www.compraonline.alcampo.es), Bringmeister -> Knuspr, ATB Market (zakaz.atbmarket.com -> www.atbmarket.com)
+- Add diagnostic console.warn when no product tiles found on a supported site
+- Remove dead/defunct sites: Jiffy Grocery, Fresh Ireland, Mall SK, m.ua, Varus, Pchelka, Coop Estonia, etoppiegade.lv, Bringmeister (replaced by Knuspr)
+- Remove untestable US grocery sites: Whole Foods, Harris Teeter, Safeway, Food Lion, Albertsons, Vons, Jewel-Osco, Acme, Shaws, Stop & Shop, Giant Food Stores, Giant Food, Hannaford
+
 ### 1.3.1 - 17/06/2023
 
 - Fix bugs

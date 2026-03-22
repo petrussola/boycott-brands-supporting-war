@@ -63,7 +63,6 @@
 
 #### Estonia
 
-- Coop
 - Rimi
 - Selver
 - Prisma Peremarket
@@ -94,7 +93,7 @@
 - Rewe
 - Amazon
 - Flaschenpost
-- Bringmeister
+- Knuspr
 - Lidl
 
 #### Ireland
@@ -135,7 +134,6 @@
 #### Slovakia
 
 - Alza
-- Mall
 - Tesco
 
 #### Spain
@@ -145,7 +143,6 @@
 - Carrefour
 - Esclat
 - Eroski
-- Hipercor
 - El Corte Inglés
 - Caprabo
 - Leclerc
@@ -163,9 +160,7 @@
 - Мегамаркет
 - Zakaz
 - Auchan
-- Варус
 - Novus
-- Pchelka
 - ЕКО-маркет
 - Ultramarket
 - Cosmos
@@ -177,7 +172,6 @@
 - Prom
 - Rozetka
 - ek.ua
-- m.ua
 
 #### UK
 
@@ -200,18 +194,6 @@
 - Amazon
 - Google Shopping
 - Kroger
-- Whole Foods
-- Harris Teeter
-- Safeway
-- Food Lion
-- Albertsons
-- Vons
-- Jewel-Osco
-- Acme
-- Stop & Shop
-- Giant Food Stores
-- Giant Food
-- Hannaford
 
 ### Screenshots
 

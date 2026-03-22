@@ -136,12 +136,6 @@ function getClassNames() {
         productTileClass: ".browsingitem",
         tileProp: "textContent",
       };
-    case "www.mall.sk":
-      return {
-        mainContentClass: ["body"],
-        productTileClass: ".category-products__item",
-        tileProp: "textContent",
-      };
     case "potravinydomov.itesco.sk":
       return {
         mainContentClass: ["body", "main__content"],
@@ -196,22 +190,16 @@ function getClassNames() {
         productTileClass: ".fp_product",
         tileProp: "textContent",
       };
-    case "www.bringmeister.de":
+    case "www.knuspr.de":
       return {
-        mainContentClass: ["body", "css-vherbg"],
-        productTileClass: ".styles_productwrapper__2UcI7",
+        mainContentClass: ["body"],
+        productTileClass: "[data-test^='productCard']",
         tileProp: "textContent",
       };
     case "www.lidl.de":
       return {
         mainContentClass: ["body"],
         productTileClass: ".s-grid__item",
-        tileProp: "textContent",
-      };
-    case "ecoop.ee":
-      return {
-        mainContentClass: ["products-wrapper"],
-        productTileClass: ".item",
         tileProp: "textContent",
       };
     case "www.rimi.ee":
@@ -245,12 +233,6 @@ function getClassNames() {
         tileProp: "textContent",
       };
     case "etop.lv":
-      return {
-        mainContentClass: ["body"],
-        productTileClass: ".product-grid",
-        tileProp: "textContent",
-      };
-    case "etoppiegade.lv":
       return {
         mainContentClass: ["body"],
         productTileClass: ".product-grid",
@@ -368,12 +350,6 @@ function getClassNames() {
         productTileClass: "[data-testid='product-container']",
         tileProp: "textContent",
       };
-    case "www.hipercor.es":
-      return {
-        mainContentClass: ["more_results"],
-        productTileClass: ".grid-item",
-        tileProp: "textContent",
-      };
     case "www.elcorteingles.es":
       return {
         mainContentClass: ["more_results"],
@@ -422,103 +398,13 @@ function getClassNames() {
         productTileClass: ".AutoGrid-cell",
         tileProp: "innerText",
       };
-    case "www.wholefoodsmarket.com":
-      return {
-        mainContentClass: ["body"],
-        productTileClass: ".w-pie--product-tile",
-        tileProp: "innerText",
-      };
-    case "www.harristeeter.com":
-      return {
-        mainContentClass: ["body", "PaginateItems"],
-        productTileClass: ".AutoGrid-cell",
-        tileProp: "innerText",
-      };
-    case "www.safeway.com":
-      return {
-        mainContentClass: ["body"],
-        productTileClass: ".card",
-        tileProp: "innerText",
-      };
-    case "shop.foodlion.com":
-      return {
-        mainContentClass: ["body"],
-        productTileClass: ".product-wrapper",
-        tileProp: "innerText",
-      };
-    case "www.albertsons.com":
-      return {
-        mainContentClass: ["body"],
-        productTileClass: ".card",
-        tileProp: "innerText",
-      };
-    case "www.vons.com":
-      return {
-        mainContentClass: ["body"],
-        productTileClass: ".card",
-        tileProp: "innerText",
-      };
-    case "www.jewelosco.com":
-      return {
-        mainContentClass: ["body"],
-        productTileClass: ".card",
-        tileProp: "innerText",
-      };
-    case "www.acmemarkets.com":
-      return {
-        mainContentClass: ["body"],
-        productTileClass: ".card",
-        tileProp: "innerText",
-      };
-    case "www.shaws.com":
-      return {
-        mainContentClass: ["body"],
-        productTileClass: ".card",
-        tileProp: "innerText",
-      };
-    case "stopandshop.com":
-      return {
-        mainContentClass: ["body", "product-view-search"],
-        productTileClass: ".product-cell",
-        tileProp: "innerText",
-      };
-    case "giantfoodstores.com":
-      return {
-        mainContentClass: ["body", "product-view-search"],
-        productTileClass: ".product-cell",
-        tileProp: "innerText",
-      };
-    case "giantfood.com":
-      return {
-        mainContentClass: ["body", "product-view-search"],
-        productTileClass: ".product-cell",
-        tileProp: "innerText",
-      };
-    case "www.hannaford.com":
-      return {
-        mainContentClass: ["body"],
-        productTileClass: ".product-impressions",
-        tileProp: "innerText",
-      };
     case "megamarket.zakaz.ua":
       return {
         mainContentClass: ["body", "search-result"],
         productTileClass: ".ProductsBox__listItem",
         tileProp: "textContent",
       };
-    case "varus.zakaz.ua":
-      return {
-        mainContentClass: ["body", "search-result"],
-        productTileClass: ".ProductsBox__listItem",
-        tileProp: "textContent",
-      };
     case "novus.zakaz.ua":
-      return {
-        mainContentClass: ["body", "search-result"],
-        productTileClass: ".ProductsBox__listItem",
-        tileProp: "textContent",
-      };
-    case "pchelka.zakaz.ua":
       return {
         mainContentClass: ["body", "search-result"],
         productTileClass: ".ProductsBox__listItem",
@@ -572,7 +458,7 @@ function getClassNames() {
         productTileClass: ".product",
         tileProp: "textContent",
       };
-    case "zakaz.atbmarket.com":
+    case "www.atbmarket.com":
       return {
         mainContentClass: ["body"],
         productTileClass: ".catalog-item",
@@ -668,12 +554,6 @@ function getClassNames() {
         productTileClass: ".grocery-item",
         tileProp: "textContent",
       };
-    case "drive.supermarchesmatch.fr":
-      return {
-        mainContentClass: ["body"],
-        productTileClass: ".item-container",
-        tileProp: "textContent",
-      };
     case "prom.ua":
       return {
         mainContentClass: ["body", "iVGEc"],
@@ -690,12 +570,6 @@ function getClassNames() {
       return {
         mainContentClass: ["body"],
         productTileClass: ".touchcarousel-item",
-        tileProp: "textContent",
-      };
-    case "m.ua":
-      return {
-        mainContentClass: ["body"],
-        productTileClass: ".pict_txt",
         tileProp: "textContent",
       };
     default:
