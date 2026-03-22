@@ -634,11 +634,6 @@ function observeDomChanges(contentClassName, productTileClassName, tileProp) {
 function applyBoycott(productTileClassName, tileProp) {
   const boycottedCompanies = [];
   const productTiles = document.querySelectorAll(productTileClassName);
-  if (productTiles.length === 0 && productTileClassName) {
-    console.warn(
-      `[Boycott Extension] No product tiles found with selector "${productTileClassName}" on ${window.location.hostname}. The site may have changed its HTML structure.`
-    );
-  }
   console.log(
     "## These are the products identified by the boycott extension. Useful for debugging purposes. ##"
   );
