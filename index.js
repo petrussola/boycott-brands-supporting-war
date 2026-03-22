@@ -29,8 +29,8 @@ function getClassNames() {
       };
     case "www.ocado.com":
       return {
-        mainContentClass: ["app-page", "main-column"],
-        productTileClass: ".fops-item",
+        mainContentClass: ["body"],
+        productTileClass: ".product-card-container",
         tileProp: "textContent",
       };
     case "shop.supervalu.ie":
@@ -46,16 +46,16 @@ function getClassNames() {
         productTileClass: ".pt-grid-item",
         tileProp: "textContent",
       };
-    case "groceries.asda.com":
+    case "www.asda.com":
       return {
         mainContentClass: ["body"],
-        productTileClass: ".co-item",
+        productTileClass: ".product-module",
         tileProp: "textContent",
       };
     case "groceries.morrisons.com":
       return {
         mainContentClass: ["body"],
-        productTileClass: ".fop-item",
+        productTileClass: ".product-card-container",
         tileProp: "textContent",
       };
     case "www.iceland.co.uk":
@@ -70,7 +70,7 @@ function getClassNames() {
         productTileClass: ".product-item",
         tileProp: "textContent",
       };
-    case "groceries.aldi.co.uk":
+    case "www.aldi.co.uk":
       return {
         mainContentClass: ["body"],
         productTileClass: ".product-tile",
@@ -90,8 +90,8 @@ function getClassNames() {
       };
     case "www.dia.es":
       return {
-        mainContentClass: ["pageType-ContentPage"],
-        productTileClass: ".product-list__item",
+        mainContentClass: ["body"],
+        productTileClass: ".search-product-card",
         tileProp: "textContent",
       };
     case "www.alcampo.es":
@@ -127,7 +127,7 @@ function getClassNames() {
     case "www.waitrose.com":
       return {
         mainContentClass: ["body"],
-        productTileClass: ".productPod___yz0mm",
+        productTileClass: "[data-testid='product-pod']",
         tileProp: "textContent",
       };
     case "zakupy.auchan.pl":
@@ -193,7 +193,7 @@ function getClassNames() {
     case "www.rewe.de":
       return {
         mainContentClass: ["body"],
-        productTileClass: ".product-card",
+        productTileClass: ".spr-product-tile",
         tileProp: "textContent",
       };
     case "www.amazon.de":
@@ -401,13 +401,13 @@ function getClassNames() {
     case "www.walmart.com":
       return {
         mainContentClass: ["body"],
-        productTileClass: ".w-25",
+        productTileClass: "[data-item-id]",
         tileProp: "textContent",
       };
     case "www.target.com":
       return {
         mainContentClass: ["body"],
-        productTileClass: ".ebNJlV",
+        productTileClass: "[data-test='@web/site-top-of-funnel/ProductCardWrapper']",
         tileProp: "textContent",
       };
     case "www.instacart.com":
@@ -653,7 +653,7 @@ function getClassNames() {
     case "www.carrefour.fr":
       return {
         mainContentClass: ["body"],
-        productTileClass: ".product-grid-item",
+        productTileClass: ".product-list-grid__item",
         tileProp: "textContent",
       };
     case "www.intermarche.com":
