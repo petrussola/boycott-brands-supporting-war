@@ -47,7 +47,6 @@
 - Tesco
 - Dunnes
 - Super Valu
-- Fresh
 
 #### Latvia
 
@@ -133,7 +132,6 @@
 - Asda
 - Morrisons
 - Iceland
-- Jiffy
 - Aldi
 - Amazon
 - Waitrose

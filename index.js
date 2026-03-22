@@ -36,7 +36,7 @@ function getClassNames() {
     case "shop.supervalu.ie":
       return {
         mainContentClass: ["body"],
-        productTileClass: ".product-list-item",
+        productTileClass: "[data-testid^='ProductCardWrapper']",
         tileProp: "textContent",
       };
     case "www.sainsburys.co.uk":
@@ -61,13 +61,7 @@ function getClassNames() {
     case "www.iceland.co.uk":
       return {
         mainContentClass: ["body"],
-        productTileClass: ".product-tile",
-        tileProp: "textContent",
-      };
-    case "shop.jiffygrocery.co.uk":
-      return {
-        mainContentClass: ["w-100p w-min-320"],
-        productTileClass: ".product-item",
+        productTileClass: "div:has(> div > a[href*='/p/'])",
         tileProp: "textContent",
       };
     case "www.aldi.co.uk":
@@ -84,8 +78,8 @@ function getClassNames() {
       };
     case "www.compraonline.bonpreuesclat.cat":
       return {
-        mainContentClass: ["layout__Container-sc-1cgl98j-0"],
-        productTileClass: ".box__Box-sc-4y5e6z-0",
+        mainContentClass: ["body"],
+        productTileClass: ".product-card-container",
         tileProp: "textContent",
       };
     case "www.dia.es":
@@ -94,29 +88,23 @@ function getClassNames() {
         productTileClass: ".search-product-card",
         tileProp: "textContent",
       };
-    case "www.alcampo.es":
+    case "www.compraonline.alcampo.es":
       return {
         mainContentClass: ["body"],
-        productTileClass: ".productGridItemContainer",
-        tileProp: "innerText",
+        productTileClass: ".product-card-container",
+        tileProp: "textContent",
       };
     case "www.carrefour.es":
       return {
-        mainContentClass: ["ebx-result-figure"],
-        productTileClass: ".ebx-result",
+        mainContentClass: ["body"],
+        productTileClass: ".product-list-grid__item",
         tileProp: "textContent",
       };
     case "www.dunnesstoresgrocery.com":
       return {
         mainContentClass: ["body"],
-        productTileClass: ".ColListing-sc-lcurnl",
+        productTileClass: "[data-testid^='ProductCardWrapper']",
         tileProp: "textContent",
-      };
-    case "freshonline.ie":
-      return {
-        mainContentClass: ["warehouse--v1"],
-        productTileClass: ".product-item",
-        tileProp: "innerText",
       };
     case "supermercado.eroski.es":
       return {
@@ -407,8 +395,8 @@ function getClassNames() {
     case "www.target.com":
       return {
         mainContentClass: ["body"],
-        productTileClass: "[data-test='@web/site-top-of-funnel/ProductCardWrapper']",
-        tileProp: "textContent",
+        productTileClass: "[data-test^='productCardVariant']",
+        tileProp: "innerText",
       };
     case "www.instacart.com":
       return {
@@ -425,7 +413,7 @@ function getClassNames() {
     case "www.google.com":
       return {
         mainContentClass: ["body"],
-        productTileClass: ".sh-dgr__grid-result",
+        productTileClass: ".pla-unit",
         tileProp: "innerText",
       };
     case "www.kroger.com":
