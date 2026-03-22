@@ -25,7 +25,6 @@ This extension currently targets companies graded D, F and G by [Yale School of 
 - JDE Peet's
 - Lactalis
 - Storck
-- Zwack
 - Anecoop
 - Campari
 - Carmim

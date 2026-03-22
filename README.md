@@ -31,7 +31,6 @@
 - JDE Peet's
 - Lactalis
 - Storck
-- Zwack
 - Anecoop
 - Campari
 - Carmim

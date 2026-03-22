@@ -1450,7 +1450,6 @@ const brandsOwnersMap = {
   Mamba: "Storck",
   Bendicks: "Storck",
   "Bunte Welt": "Storck",
-  Zwack: "Zwack",
   Bouquet: "Anecoop",
   Naturane: "Anecoop",
   "Bouquet Bio": "Anecoop",
