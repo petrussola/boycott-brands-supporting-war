@@ -703,9 +703,19 @@ function showFooter(listCompanies) {
   flag.ariaRoleDescription = "Ukrainian Flag";
   flag.ariaLabel = "Ukrainian Flag";
   flag.role = "img";
-  text.innerHTML = `By refusing to exit the Russian market, ${formattedListCompanies} ${
-    listCompanies.length > 1 ? "are" : "is"
-  } supporting the war in Ukraine. Their products have been blurred. Please choose something else. <a href="https://github.com/petrussola/boycott-brands-supporting-war/blob/main/README.md" target="_blank" rel="noopener noreferrer">Read more</a>`;
+  text.appendChild(
+    document.createTextNode(
+      `By refusing to exit the Russian market, ${formattedListCompanies} ${
+        listCompanies.length > 1 ? "are" : "is"
+      } supporting the war in Ukraine. Their products have been blurred. Please choose something else. `
+    )
+  );
+  const readMore = document.createElement("a");
+  readMore.href = "https://github.com/petrussola/boycott-brands-supporting-war/blob/main/README.md";
+  readMore.target = "_blank";
+  readMore.rel = "noopener noreferrer";
+  readMore.textContent = "Read more";
+  text.appendChild(readMore);
   close.classList.add("close-button");
   close.innerText = "Close";
   close.addEventListener("click", hideFooter);
