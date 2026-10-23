@@ -589,7 +589,9 @@ function findContentTag(contentTarget) {
       case "body":
         return (mutation) => mutation.target.localName === ct;
       default:
-        return (mutation) => mutation.target.className.includes(ct);
+        return (mutation) =>
+          typeof mutation.target.className === "string" &&
+          mutation.target.className.includes(ct);
     }
   });
   return results;
@@ -598,37 +600,39 @@ function findContentTag(contentTarget) {
 function observeDomChanges(contentClassName, productTileClassName, tileProp) {
   const targetFinder = findContentTag(contentClassName);
   const observer = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
-      if (
-        mutation.type === "childList" &&
-        (!mutation.previousSibling ||
-          mutation.previousSibling.className !== "ukraine-footer")
-      ) {
-        // iterate over closures and check if
-        // there is one that returns true
-        targetFinder.forEach((tf) => {
-          // if check is true, we proceed
-          if (tf(mutation)) {
-            console.log(mutation);
-            // highlight products
-            const listBoycottedCompanies = applyBoycott(
-              productTileClassName,
-              tileProp
-            );
-            if (mutation.removedNodes[0]?.className === "ukraine-footer") {
-              return;
-            }
-            // action banner
-            listBoycottedCompanies.length > 0
-              ? showFooter(listBoycottedCompanies)
-              : hideFooter();
-          }
-        });
+    const contentChanged = mutations.some(
+      (mutation) => {
+        const target = mutation.target.nodeType === Node.ELEMENT_NODE
+          ? mutation.target
+          : mutation.target.parentElement;
+        if (target?.closest(".ukraine-footer")) return false;
+        if (mutation.type === "characterData") {
+          return Boolean(target?.closest(productTileClassName));
+        }
+        const changedNodes = [...mutation.addedNodes, ...mutation.removedNodes];
+        if (changedNodes.every((node) =>
+          node.nodeType === Node.ELEMENT_NODE &&
+          node.classList.contains("ukraine-footer")
+        )) return false;
+        return targetFinder.some((matchesTarget) => matchesTarget(mutation)) ||
+          Boolean(target?.closest(productTileClassName)) ||
+          changedNodes.some((node) =>
+            node.nodeType === Node.ELEMENT_NODE &&
+            (node.matches(productTileClassName) ||
+              node.querySelector(productTileClassName))
+          );
       }
-    });
+    );
+    if (!contentChanged) return;
+
+    const listBoycottedCompanies = applyBoycott(productTileClassName, tileProp);
+    hideFooter();
+    if (listBoycottedCompanies.length > 0) {
+      showFooter(listBoycottedCompanies);
+    }
   });
 
-  observer.observe(document.body, { subtree: true, childList: true });
+  observer.observe(document.body, { subtree: true, childList: true, characterData: true });
 }
 
 function applyBoycott(productTileClassName, tileProp) {
@@ -658,6 +662,8 @@ function applyBoycott(productTileClassName, tileProp) {
         brandsOwnersMap[matchedBrand],
         boycottedCompanies
       );
+    } else {
+      tile.classList.remove("blurred");
     }
   });
   console.log("## End of the list of identified products. ##");
@@ -665,14 +671,10 @@ function applyBoycott(productTileClassName, tileProp) {
 }
 
 function isBrandFoundInText(text) {
-  // get array from brands
-  const brands = Object.keys(brandsOwnersMap);
-  // iterate over brand and return boolean depending
-  // on whether brand has been found in text or not
-  const matchedBrand = brands.find((brand) =>
-    text.includes(brand.toLowerCase())
+  const matchedBrand = brandSearchTerms.find(({ lowerCaseName }) =>
+    text.includes(lowerCaseName)
   );
-  return matchedBrand;
+  return matchedBrand?.name;
 }
 
 function applyBlur(node) {
@@ -1555,3 +1557,8 @@ const brandsOwnersMap = {
   "Topo Chico": "Coca-Cola",
   "Glaceau Vitamin Water": "Coca-Cola",
 };
+
+const brandSearchTerms = Object.keys(brandsOwnersMap).map((name) => ({
+  name,
+  lowerCaseName: name.toLowerCase(),
+}));
